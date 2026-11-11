@@ -1,0 +1,82 @@
+{
+  "SM1": {
+    "frequency": 2,
+    "pillar": "smoking"
+  },
+  "SM2": {
+    "frequency": 2,
+    "pillar": "smoking"
+  },
+  "SM3": {
+    "frequency": 2,
+    "pillar": "smoking"
+  },
+  "SM4": {
+    "frequency": 2,
+    "pillar": "smoking"
+  },
+  "AM1": {
+    "frequency": 7,
+    "pillar": "alcohol"
+  },
+  "AM2": {
+    "frequency": 1,
+    "pillar": "alcohol"
+  },
+  "AM3": {
+    "frequency": 1,
+    "pillar": "alcohol"
+  },
+  "AM4": {
+    "frequency": 1,
+    "pillar": "alcohol"
+  },
+  "NM1": {
+    "frequency": 1,
+    "pillar": "nutrition"
+  },
+  "NM2": {
+    "frequency": 3,
+    "pillar": "nutrition"
+  },
+  "NM3": {
+    "frequency": 5,
+    "pillar": "nutrition"
+  },
+  "NM4": {
+    "frequency": 7,
+    "pillar": "nutrition"
+  },
+  "PM1": {
+    "frequency": 1,
+    "pillar": "physical activity"
+  },
+  "PM2": {
+    "frequency": 1,
+    "pillar": "physical activity"
+  },
+  "PM3": {
+    "frequency": 2,
+    "pillar": "physical activity"
+  },
+  "PM4": {
+    "frequency": 3,
+    "pillar": "physical activity"
+  },
+  "EM1": {
+    "frequency": 7,
+    "pillar": "emotional wellbeing"
+  },
+  "EM2": {
+    "frequency": 7,
+    "pillar": "emotional wellbeing"
+  },
+  "EM3": {
+    "frequency": 7,
+    "pillar": "emotional wellbeing"
+  },
+  "EM4": {
+    "frequency": 1,
+    "pillar": "emotional wellbeing"
+  }
+}

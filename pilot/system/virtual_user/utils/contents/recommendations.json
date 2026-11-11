@@ -1,0 +1,1681 @@
+[
+  {
+    "rec_id": "ERc2",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM1",
+      "EM2",
+      "EM3",
+      "EM4"
+    ],
+    "objective": [
+      "EO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical opportunity"
+    ],
+    "intervention_type": [
+      "Environmental Restructuring"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ERc3",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM1",
+      "EM2"
+    ],
+    "objective": [
+      "EO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education",
+      "Training"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ERc4",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM3"
+    ],
+    "objective": [
+      "EO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ERc5",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM3"
+    ],
+    "objective": [
+      "EO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Persuasion",
+      "Incentivisation",
+      "Training",
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ERc6",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM3"
+    ],
+    "objective": [
+      "EO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical opportunity"
+    ],
+    "intervention_type": [
+      "Education",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ERc7",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM4"
+    ],
+    "objective": [
+      "EO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Environmental Restructuring",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ERc42",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM2",
+      "EM3",
+      "EM4"
+    ],
+    "objective": [
+      "EO2"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Persuasion",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc1",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM1"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc2",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM1"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Training"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc3",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM1"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Persuasion",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc4",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM2"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Persuasion",
+      "Incentivisation"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc5",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM2"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Incentivisation",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc6",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM2"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Social opportunity"
+    ],
+    "intervention_type": [
+      "Persuasion",
+      "Incentivisation",
+      "Environmental Restructuring",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc7",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM3"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Education",
+      "Training",
+      "Persuasion",
+      "Incentivisation"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc8",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM3"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Education",
+      "Persuasion",
+      "Incentivisation",
+      "Environmental Restructuring",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc9",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM3"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Training",
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc10",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM4"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Training",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc11",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM4"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical capability"
+    ],
+    "intervention_type": [
+      "Training",
+      "Environmental Restructuring",
+      "Restrictions",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "ARc12",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM4"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Automatic Motivation"
+    ],
+    "intervention_type": [
+      "Persuasion",
+      "Education",
+      "Incentivisation",
+      "Training",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "PRc1",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "PM1",
+      "PM2",
+      "PM3",
+      "PM4"
+    ],
+    "objective": [
+      "PO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "PRc2",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "PM1",
+      "PM2",
+      "PM3",
+      "PM4"
+    ],
+    "objective": [
+      "PO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "PRc3",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "PM1",
+      "PM2",
+      "PM3",
+      "PM4"
+    ],
+    "objective": [
+      "PO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "PRc4",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "PM1",
+      "PM2",
+      "PM3",
+      "PM4"
+    ],
+    "objective": [
+      "PO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "PRc5",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "PM1",
+      "PM2",
+      "PM3",
+      "PM4"
+    ],
+    "objective": [
+      "PO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "PRc6",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "PM1",
+      "PM2",
+      "PM3",
+      "PM4"
+    ],
+    "objective": [
+      "PO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "PRc7",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "PM4"
+    ],
+    "objective": [
+      "PO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc1",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc2",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc3",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical opportunity"
+    ],
+    "intervention_type": [
+      "Environmental Restructuring"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc4",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical opportunity"
+    ],
+    "intervention_type": [
+      "Environmental Restructuring"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc5",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Education",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc29",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO7",
+      "NO1",
+      "NO5"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical opportunity"
+    ],
+    "intervention_type": [
+      "Environmental Restructuring"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc31",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM2"
+    ],
+    "objective": [
+      "NO7",
+      "NO3"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical opportunity"
+    ],
+    "intervention_type": [
+      "Environmental Restructuring"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc35",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO7",
+      "NO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical opportunity"
+    ],
+    "intervention_type": [
+      "Education",
+      "Environmental Restructuring"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc36",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO1",
+      "NO7"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical opportunity"
+    ],
+    "intervention_type": [
+      "Education",
+      "Environmental Restructuring"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc53",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO6",
+      "NO7",
+      "NO8",
+      "NO9",
+      "NO10",
+      "NO1",
+      "NO2",
+      "NO3",
+      "NO4",
+      "NO5"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical opportunity"
+    ],
+    "intervention_type": [
+      "Environmental Restructuring",
+      "Enablement",
+      "Restrictions"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc54",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO6",
+      "NO7",
+      "NO8",
+      "NO9",
+      "NO10",
+      "NO1",
+      "NO2",
+      "NO3",
+      "NO4",
+      "NO5"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Environmental Restructuring",
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "NRc55",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO6",
+      "NO7",
+      "NO8",
+      "NO9",
+      "NO10",
+      "NO1",
+      "NO2",
+      "NO3",
+      "NO4",
+      "NO5"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Education",
+      "Training"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc1",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM1",
+      "SM3"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc2",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM1",
+      "SM3"
+    ],
+    "objective": [
+      "SO1",
+      "SO2"
+    ],
+    "hapa": [
+      "Pre-intender",
+      "Intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc3",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM1"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education",
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc4",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM1"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Persuasion",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc5",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM1"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education",
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc6",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM1"
+    ],
+    "objective": [
+      "SO1",
+      "SO2"
+    ],
+    "hapa": [
+      "Pre-intender",
+      "Intender"
+    ],
+    "comb": [
+      "Social opportunity"
+    ],
+    "intervention_type": [
+      "Education",
+      "Modelling"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc7",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM1"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc8",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM2"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Persuasion",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc9",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM2"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Enablement",
+      "Training"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc10",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM2"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Enablement",
+      "Training"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc11",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM2"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Incentivisation",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc12",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM2"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Environmental Restructuring",
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc13",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM3"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Training",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc14",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM3"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Training",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc15",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM3"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [
+      "Social opportunity"
+    ],
+    "intervention_type": [
+      "Enablement",
+      "Incentivisation"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc16",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM4"
+    ],
+    "objective": [
+      "SO1",
+      "SO3"
+    ],
+    "hapa": [
+      "Pre-intender",
+      "Actor"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc17",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM4"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Environmental Restructuring",
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc18",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM4"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Incentivisation",
+      "Enablement"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc19",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM4"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc20",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM4"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc21",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM4"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc22",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM4"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [
+      "Social opportunity"
+    ],
+    "intervention_type": [
+      "Enablement",
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  },
+  {
+    "rec_id": "SRc39",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM4"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Persuasion"
+    ],
+    "type": "recommendation"
+  }
+]

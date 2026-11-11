@@ -1,0 +1,487 @@
+[
+  {
+    "rec_id": "ERs1",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM1"
+    ],
+    "objective": [
+      "EO1",
+      "EO2",
+      "EO3"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education",
+      "Training",
+      "Enablement"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "ERs5",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM3"
+    ],
+    "objective": [
+      "EO1",
+      "EO4"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education",
+      "Training",
+      "Enablement"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "ERs7",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM4"
+    ],
+    "objective": [
+      "EO1",
+      "EO2",
+      "EO3"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education",
+      "Training",
+      "Enablement"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "ERs10",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "EM1",
+      "EM2",
+      "EM3",
+      "EM4"
+    ],
+    "objective": [
+      "EO1",
+      "EO3",
+      "EO4"
+    ],
+    "hapa": [],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Education",
+      "Incentivisation"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "ARs1",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM4"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [],
+    "comb": [
+      "Physical capability"
+    ],
+    "intervention_type": [
+      "Education",
+      "Persuasion"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "ARs2",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM4"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [
+      "Intender"
+    ],
+    "comb": [
+      "Social opportunity"
+    ],
+    "intervention_type": [
+      "Education",
+      "Training"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "ARs3",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM2"
+    ],
+    "objective": [
+      "AO1"
+    ],
+    "hapa": [
+      "Actor"
+    ],
+    "comb": [
+      "Reflective Motivation"
+    ],
+    "intervention_type": [
+      "Education",
+      "Training"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "ARs5",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "AM2"
+    ],
+    "objective": [
+      "AO1",
+      "AO2"
+    ],
+    "hapa": [
+      "Actor"
+    ],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education",
+      "Persuasion",
+      "Environmental Restructuring",
+      "Enablement"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "PRs1",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "PM1",
+      "PM2",
+      "PM3"
+    ],
+    "objective": [],
+    "hapa": [],
+    "comb": [],
+    "intervention_type": [],
+    "type": "resource"
+  },
+  {
+    "rec_id": "NRs1",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO1",
+      "NO2",
+      "NO3",
+      "NO4",
+      "NO5",
+      "NO6",
+      "NO7",
+      "NO8",
+      "NO9",
+      "NO10"
+    ],
+    "hapa": [],
+    "comb": [],
+    "intervention_type": [],
+    "type": "resource"
+  },
+  {
+    "rec_id": "NRs4",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO6",
+      "NO1",
+      "NO2",
+      "NO3",
+      "NO4",
+      "NO5",
+      "NO7",
+      "NO8",
+      "NO9"
+    ],
+    "hapa": [],
+    "comb": [],
+    "intervention_type": [],
+    "type": "resource"
+  },
+  {
+    "rec_id": "NRs6",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO6",
+      "NO1",
+      "NO2",
+      "NO3",
+      "NO4",
+      "NO5",
+      "NO7",
+      "NO8",
+      "NO9"
+    ],
+    "hapa": [],
+    "comb": [],
+    "intervention_type": [],
+    "type": "resource"
+  },
+  {
+    "rec_id": "NRs7",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO1",
+      "NO2"
+    ],
+    "hapa": [],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education",
+      "Training"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "NRs8",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "objective": [
+      "NO1",
+      "NO2",
+      "NO5"
+    ],
+    "hapa": [],
+    "comb": [],
+    "intervention_type": [],
+    "type": "resource"
+  },
+  {
+    "rec_id": "SRs1",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM1"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "SRs2",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM1"
+    ],
+    "objective": [
+      "SO1"
+    ],
+    "hapa": [
+      "Pre-intender"
+    ],
+    "comb": [
+      "Psychological capability"
+    ],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "resource"
+  },
+  {
+    "rec_id": "SRs3",
+    "classes": [],
+    "day_of_week": [],
+    "moment_of_day": [],
+    "need": [],
+    "category_id": [],
+    "season": [],
+    "topic": [],
+    "behaviour_id": [],
+    "mission": [
+      "SM2"
+    ],
+    "objective": [
+      "SO1",
+      "SO2"
+    ],
+    "hapa": [
+      "Pre-intender",
+      "Intender"
+    ],
+    "comb": [],
+    "intervention_type": [
+      "Education"
+    ],
+    "type": "resource"
+  }
+]

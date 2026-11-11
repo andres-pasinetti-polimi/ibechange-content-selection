@@ -1,0 +1,82 @@
+[
+  {
+    "mission_id": "AM1",
+    "weekly_frequency": 1
+  },
+  {
+    "mission_id": "AM2",
+    "weekly_frequency": 7
+  },
+  {
+    "mission_id": "AM3",
+    "weekly_frequency": 7
+  },
+  {
+    "mission_id": "AM4",
+    "weekly_frequency": 7
+  },
+  {
+    "mission_id": "NM1",
+    "weekly_frequency": 1
+  },
+  {
+    "mission_id": "NM2",
+    "weekly_frequency": 3
+  },
+  {
+    "mission_id": "NM3",
+    "weekly_frequency": 4
+  },
+  {
+    "mission_id": "NM4",
+    "weekly_frequency": 7
+  },
+  {
+    "mission_id": "SM1",
+    "weekly_frequency": 5
+  },
+  {
+    "mission_id": "SM2",
+    "weekly_frequency": 5
+  },
+  {
+    "mission_id": "SM3",
+    "weekly_frequency": 5
+  },
+  {
+    "mission_id": "SM4",
+    "weekly_frequency": 7
+  },
+  {
+    "mission_id": "PM1",
+    "weekly_frequency": 1
+  },
+  {
+    "mission_id": "PM2",
+    "weekly_frequency": 2
+  },
+  {
+    "mission_id": "PM3",
+    "weekly_frequency": 1
+  },
+  {
+    "mission_id": "PM4",
+    "weekly_frequency": 2
+  },
+  {
+    "mission_id": "EM1",
+    "weekly_frequency": 7
+  },
+  {
+    "mission_id": "EM2",
+    "weekly_frequency": 7
+  },
+  {
+    "mission_id": "EM3",
+    "weekly_frequency": 7
+  },
+  {
+    "mission_id": "EM4",
+    "weekly_frequency": 7
+  }
+]

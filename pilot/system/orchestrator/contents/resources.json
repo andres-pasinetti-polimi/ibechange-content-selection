@@ -1,0 +1,344 @@
+{
+  "SRs1.1": {
+    "language": "ITA",
+    "missions": [
+      "SM1"
+    ],
+    "pillar": "smoking",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education"
+    ]
+  },
+  "SRs1.2": {
+    "language": "ITA",
+    "missions": [
+      "SM1"
+    ],
+    "pillar": "smoking",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education"
+    ]
+  },
+  "SRs1.3": {
+    "language": "ITA",
+    "missions": [
+      "SM1"
+    ],
+    "pillar": "smoking",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education"
+    ]
+  },
+  "SRs1.4": {
+    "language": "ITA",
+    "missions": [
+      "SM1"
+    ],
+    "pillar": "smoking",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education"
+    ]
+  },
+  "SRs1": {
+    "language": "SPA",
+    "missions": [
+      "SM1"
+    ],
+    "pillar": "smoking",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education"
+    ]
+  },
+  "SRs2.1": {
+    "language": "ITA",
+    "missions": [
+      "SM1"
+    ],
+    "pillar": "smoking",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education"
+    ]
+  },
+  "SRs2.2": {
+    "language": "ITA",
+    "missions": [
+      "SM1"
+    ],
+    "pillar": "smoking",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education"
+    ]
+  },
+  "SRs2": {
+    "language": "SPA",
+    "missions": [
+      "SM2"
+    ],
+    "pillar": "smoking",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education"
+    ]
+  },
+  "SRs3.1": {
+    "language": "ITA",
+    "missions": [
+      "SM2"
+    ],
+    "pillar": "smoking",
+    "com_b": null,
+    "intervention_types": [
+      "education"
+    ]
+  },
+  "ARs1": {
+    "language": "SPA",
+    "missions": [
+      "AM4"
+    ],
+    "pillar": "alcohol",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "persuasion",
+      "incentivisation"
+    ]
+  },
+  "ARs2": {
+    "language": "SPA",
+    "missions": [
+      "AM4"
+    ],
+    "pillar": "alcohol",
+    "com_b": "social opportunity",
+    "intervention_types": [
+      "education",
+      "training"
+    ]
+  },
+  "ARs3": {
+    "language": "SPA",
+    "missions": [
+      "AM2"
+    ],
+    "pillar": "alcohol",
+    "com_b": "reflective motivation",
+    "intervention_types": [
+      "education",
+      "training"
+    ]
+  },
+  "ARs5": {
+    "language": "SPA",
+    "missions": [
+      "AM2"
+    ],
+    "pillar": "alcohol",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "persuasion",
+      "environmental restructuring",
+      "enablement"
+    ]
+  },
+  "NRs1": {
+    "language": "SPA",
+    "missions": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "pillar": "nutrition",
+    "com_b": null,
+    "intervention_types": null
+  },
+  "NRs4": {
+    "language": "SPA",
+    "missions": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "pillar": "nutrition",
+    "com_b": null,
+    "intervention_types": null
+  },
+  "NRs5": {
+    "language": "SPA",
+    "missions": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "pillar": "nutrition",
+    "com_b": null,
+    "intervention_types": null
+  },
+  "NRs6": {
+    "language": "SPA",
+    "missions": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "pillar": "nutrition",
+    "com_b": null,
+    "intervention_types": null
+  },
+  "NRs7": {
+    "language": "SPA",
+    "missions": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "pillar": "nutrition",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "training"
+    ]
+  },
+  "NRs8": {
+    "language": "SPA",
+    "missions": [
+      "NM1",
+      "NM2",
+      "NM3",
+      "NM4"
+    ],
+    "pillar": "nutrition",
+    "com_b": null,
+    "intervention_types": null
+  },
+  "PRs1": {
+    "language": "SPA",
+    "missions": [
+      "PM1",
+      "PM2",
+      "PM3"
+    ],
+    "pillar": "physical activity",
+    "com_b": null,
+    "intervention_types": null
+  },
+  "ERs1.1": {
+    "language": "ITA",
+    "missions": [
+      "EM1"
+    ],
+    "pillar": "emotional wellbeing",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "training",
+      "enablement"
+    ]
+  },
+  "ERs1.2": {
+    "language": "ITA",
+    "missions": [
+      "EM1"
+    ],
+    "pillar": "emotional wellbeing",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "training",
+      "enablement"
+    ]
+  },
+  "ERs1": {
+    "language": "SPA",
+    "missions": [
+      "EM1"
+    ],
+    "pillar": "emotional wellbeing",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "training",
+      "enablement"
+    ]
+  },
+  "ERs5.1": {
+    "language": "ITA",
+    "missions": [
+      "EM3"
+    ],
+    "pillar": "emotional wellbeing",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "training",
+      "enablement"
+    ]
+  },
+  "ERs5.2": {
+    "language": "ITA",
+    "missions": [
+      "EM3"
+    ],
+    "pillar": "emotional wellbeing",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "training",
+      "enablement"
+    ]
+  },
+  "ERs5": {
+    "language": "SPA",
+    "missions": [
+      "EM3"
+    ],
+    "pillar": "emotional wellbeing",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "training",
+      "enablement"
+    ]
+  },
+  "ERs7": {
+    "language": "SPA",
+    "missions": [
+      "EM4"
+    ],
+    "pillar": "emotional wellbeing",
+    "com_b": "psychological capability",
+    "intervention_types": [
+      "education",
+      "training",
+      "enablement"
+    ]
+  },
+  "ERs10": {
+    "language": "SPA",
+    "missions": [
+      "EM1",
+      "EM2",
+      "EM3",
+      "EM4"
+    ],
+    "pillar": "emotional wellbeing",
+    "com_b": "reflective motivation",
+    "intervention_types": [
+      "education",
+      "incentivisation"
+    ]
+  }
+}
