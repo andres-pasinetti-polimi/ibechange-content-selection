@@ -1,0 +1,17 @@
+FROM python:3.13.1
+
+WORKDIR /app
+ENV PYTHONPATH=/app
+
+# 1) Copy only requirements first → changes rarely
+COPY virtual_user/requirements.txt /tmp/requirements_virtual_user.txt
+
+# 2) Install deps (cached until requirements.txt changes)
+RUN pip install --no-cache-dir -r /tmp/requirements_virtual_user.txt
+
+# 3) Now copy the actual code
+COPY cs_module /app/cs_module
+COPY virtual_user /app/virtual_user
+
+# 4) Run API
+CMD ["python", "-u", "-m", "virtual_user.vu_api"]

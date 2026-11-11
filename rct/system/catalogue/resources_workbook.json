@@ -1,0 +1,156 @@
+{
+ "SRs3": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9",
+   "SM49"
+  ],
+  "type": "resource",
+  "pillar": "Smoking",
+  "com_b": "Physical Opportunity",
+  "resource_type": "file",
+  "title": "Synthetic resource SRs3",
+  "text": "Synthetic text of SRs3"
+ },
+ "SRs6": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9",
+   "SM49"
+  ],
+  "type": "resource",
+  "pillar": "Smoking",
+  "com_b": "Reflective Motivation",
+  "resource_type": "link",
+  "title": "Synthetic resource SRs6",
+  "text": "Synthetic text of SRs6"
+ },
+ "SRs7": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9",
+   "SM49"
+  ],
+  "type": "resource",
+  "pillar": "Smoking",
+  "com_b": "Physical Opportunity",
+  "resource_type": "file",
+  "title": "Synthetic resource SRs7",
+  "text": "Synthetic text of SRs7"
+ },
+ "NRs1": {
+  "missions": [
+   "NM1",
+   "NM5",
+   "NM28"
+  ],
+  "type": "resource",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "resource_type": "link",
+  "title": "Synthetic resource NRs1",
+  "text": "Synthetic text of NRs1"
+ },
+ "NRs4": {
+  "missions": [
+   "NM1",
+   "NM5",
+   "NM28"
+  ],
+  "type": "resource",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "resource_type": "link",
+  "title": "Synthetic resource NRs4",
+  "text": "Synthetic text of NRs4"
+ },
+ "NRs5": {
+  "missions": [
+   "NM1",
+   "NM5",
+   "NM28"
+  ],
+  "type": "resource",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "resource_type": "link",
+  "title": "Synthetic resource NRs5",
+  "text": "Synthetic text of NRs5"
+ },
+ "PRs1": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "type": "resource",
+  "pillar": "Physical_activity",
+  "com_b": "Reflective motivation",
+  "resource_type": "link",
+  "title": "Synthetic resource PRs1",
+  "text": "Synthetic text of PRs1"
+ },
+ "PRs2": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "type": "resource",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "resource_type": "link",
+  "title": "Synthetic resource PRs2",
+  "text": "Synthetic text of PRs2"
+ },
+ "PRs3": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "type": "resource",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability, Physical opportunity, Reflective motivation ",
+  "resource_type": "link",
+  "title": "Synthetic resource PRs3",
+  "text": "Synthetic text of PRs3"
+ },
+ "ERs1": {
+  "missions": [
+   "EM1"
+  ],
+  "type": "resource",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability, Physical Opportunity",
+  "resource_type": "link",
+  "title": "Synthetic resource ERs1",
+  "text": "Synthetic text of ERs1"
+ },
+ "ERs4": {
+  "missions": [
+   "EM10"
+  ],
+  "type": "resource",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability, Physical Opportunity",
+  "resource_type": "file",
+  "title": "Synthetic resource ERs4",
+  "text": "Synthetic text of ERs4"
+ }
+}

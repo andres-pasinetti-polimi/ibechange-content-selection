@@ -1,0 +1,48 @@
+services:
+
+  cs_module:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    environment:
+      - DB_HOST=cs_db
+      - DB_NAME=cs_data
+      - DB_USER=cs_user
+      - DB_PASSWORD=cs_password
+    ports:
+      - "8010:8000"
+    depends_on:
+      cs_db:
+        condition: service_healthy
+    volumes:
+      - ./:/cs_module
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8000/health"]
+      interval: 10s
+      retries: 10
+      start_period: 5s
+    networks:
+      - airflow_default  
+
+  cs_db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: cs_data
+      POSTGRES_USER: cs_user
+      POSTGRES_PASSWORD: cs_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - ../postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "cs_user"]
+      interval: 10s
+      retries: 10
+      start_period: 5s  
+    networks:
+      - airflow_default
+
+networks:
+  airflow_default:
+    external: true

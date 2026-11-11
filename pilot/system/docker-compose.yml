@@ -1,0 +1,119 @@
+services:
+  cs_db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: cs_data
+      POSTGRES_USER: cs_user
+      POSTGRES_PASSWORD: cs_password
+    volumes:
+      # world-specific DB data
+      - ./experiments/${ENV_NAME:-baseline_v1}/world_${WORLD_ID_PADDED:-000}/postgres_data:/var/lib/postgresql/data
+    # no ports → avoids 5432 conflicts across multiple projects
+
+  time_service:
+    image: ibe_time_service:latest
+    build:
+      context: .
+      dockerfile: ./time_service/Dockerfile
+    volumes:
+      - ./time_service:/app/time_service
+
+  cs_module:
+    image: ibe_cs_module:latest
+    build:
+      context: .
+      dockerfile: ./cs_module/Dockerfile
+    environment:
+      - DS_ENABLE_FEATURE_AUDIT=0
+      - DS_STORE_FEATURE_VECTOR=0
+      - DS_STORE_PARAM_VAR=0
+      - CS_USE_REAL_TIME=false
+      - DB_HOST=cs_db
+      - DB_NAME=cs_data
+      - DB_USER=cs_user
+      - DB_PASSWORD=cs_password
+      - CS_LOG_UPDATES=stats
+      - LOG_LEVEL=INFO
+      # optional but nice: pass world metadata into CS for DataStorage
+      - ENV_NAME=${ENV_NAME}
+      - WORLD_ID=${WORLD_ID}
+      - WORLD_SEED=${WORLD_SEED:-0}
+      - STUDY_TAG=${STUDY_TAG:-local_test}
+    depends_on:
+      - cs_db
+      - time_service
+      - vu_api
+    volumes:
+      - ./cs_module:/app/cs_module
+      # world-specific generated config + prefs
+      - ./experiments/${ENV_NAME:-baseline_v1}/world_${WORLD_ID_PADDED:-000}/config.py:/app/cs_module/config.py:ro
+      - ./experiments/${ENV_NAME:-baseline_v1}/world_${WORLD_ID_PADDED:-000}/user_preferences:/app/cs_module/user_preferences:ro
+
+  vu_api:
+    image: ibe_vu_api:latest
+    build:
+      context: .
+      dockerfile: ./virtual_user/Dockerfile
+    depends_on:
+      - time_service
+    environment:
+      - ENV_NAME=${ENV_NAME}
+      - WORLD_ID=${WORLD_ID}
+      - WORLD_SEED=${WORLD_SEED:-0}
+    volumes:
+      - ./virtual_user:/app/virtual_user
+      - ./cs_module:/app/cs_module
+      # same cs_module.config inside this container
+      - ./experiments/${ENV_NAME:-baseline_v1}/world_${WORLD_ID_PADDED:-000}/config.py:/app/cs_module/config.py:ro
+      # VU's own config (if it imports virtual_user.config)
+      - ./experiments/${ENV_NAME:-baseline_v1}/world_${WORLD_ID_PADDED:-000}/config.py:/app/virtual_user/config.py:ro
+      - ./experiments/${ENV_NAME:-baseline_v1}/world_${WORLD_ID_PADDED:-000}/user_preferences:/app/virtual_user/user_preferences:ro
+
+  omi_module:
+    image: ibe_omi_module:latest
+    build:
+      context: .
+      dockerfile: ./omi_module/Dockerfile
+    depends_on:
+      - time_service
+      - vu_api
+    environment:
+      - ENV_NAME=${ENV_NAME}
+      - WORLD_ID=${WORLD_ID}
+      - WORLD_SEED=${WORLD_SEED:-0}
+    volumes:
+      - ./omi_module:/app/omi_module
+      - ./cs_module:/app/cs_module
+      - ./experiments/${ENV_NAME:-baseline_v1}/world_${WORLD_ID_PADDED:-000}/config.py:/app/cs_module/config.py:ro
+
+  orchestrator:
+    image: ibe_orchestrator:latest
+    build:
+      context: .
+      dockerfile: ./orchestrator/Dockerfile
+    environment:
+      - PYTHONUNBUFFERED=1
+      # world / env metadata consumed by orchestrator.py
+      - ENV_NAME=${ENV_NAME}
+      - WORLD_ID=${WORLD_ID}
+      - WORLD_SEED=${WORLD_SEED:-0}
+      - PROJECT_PREFIX=${PROJECT_PREFIX}
+      - STUDY_TAG=${STUDY_TAG:-local_test}
+      - MAB_TYPES=${MAB_TYPES:-TwoStageFull}
+      - HOURS_PER_POLICY=${HOURS_PER_POLICY:-2016}
+      # orchestrator will default ENV_ROOT_DIR=/app/generated_configs
+    stdin_open: true
+    tty: true
+    depends_on:
+      - time_service
+      - vu_api
+      - cs_module
+      - omi_module
+    volumes:
+      - ./orchestrator:/app/orchestrator
+      - ./cs_module:/app/cs_module
+      - ./virtual_user:/app/virtual_user
+      # full experiments tree; orchestrator will use /app/generated_configs/<ENV_NAME>/world_<id>
+      - ./experiments:/app/generated_configs
+      - /var/run/docker.sock:/var/run/docker.sock

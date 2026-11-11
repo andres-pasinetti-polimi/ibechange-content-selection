@@ -1,0 +1,18 @@
+code,pillar,objectives,class,frequency,k_m,weekly_cap,schedulable,mission_text
+SM1,Smoking,SO1,B,daily,7,no,no,Synthetic Mission SM1
+SM2,Smoking,SO1,B,daily,7,no,no,Synthetic Mission SM2
+SM3,Smoking,SO1,B,daily,7,no,no,Synthetic Mission SM3
+SM9,Smoking,SO1,B,daily,7,no,no,Synthetic Mission SM9
+SM49,Smoking,SO1,B,non-schedulable,,no,no,Synthetic Mission SM49
+NM1,Nutrition,NO1,A,three times a week,3,no,yes,Synthetic Mission NM1
+NM5,Nutrition,NO1,A,four times a week,4,no,yes,Synthetic Mission NM5
+NM28,Nutrition,NO4,B,non-schedulable,0,yes,no,Synthetic Mission NM28
+PM1,Physical_activity,PO1,A,once a week,1,no,yes,Synthetic Mission PM1
+PM2,Physical_activity,PO1,A,twice a week,2,no,yes,Synthetic Mission PM2
+PM3,Physical_activity,PO1,A,three times a week,3,no,yes,Synthetic Mission PM3
+PM4,Physical_activity,PO1,A,once a week,1,no,yes,Synthetic Mission PM4
+PM13,Physical_activity,PO2,A,twice a week,2,no,yes,Synthetic Mission PM13
+PM93,Physical_activity,PO3,A,three times a week,3,no,yes,Synthetic Mission PM93
+EM1,Emotional_Wellbeing,EO1;EO3,B,daily,7,no,no,Synthetic Mission EM1
+EM10,Emotional_Wellbeing,EO1;EO2;EO3,B,three times a week,3,no,yes,Synthetic Mission EM10
+EM31,Emotional_Wellbeing,EO2;EO3,B,non-schedulable,,no,no,Synthetic Mission EM31

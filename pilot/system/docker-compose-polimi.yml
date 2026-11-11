@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  cs_module:
+    build: ./cs_module
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=cs_data
+      - DB_USER=cs_user
+      - DB_PASSWORD=cs_password
+    volumes:
+      - ./cs_module/outputs:/app/outputs
+    networks:
+      - csnet
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: cs_data
+      POSTGRES_USER: cs_user
+      POSTGRES_PASSWORD: cs_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - csnet
+
+volumes:
+  pgdata:
+
+networks:
+  csnet:

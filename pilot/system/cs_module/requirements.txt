@@ -1,0 +1,7 @@
+requests
+numpy
+flask
+scipy
+psycopg2-binary
+uuid
+python-dateutil

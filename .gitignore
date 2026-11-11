@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.DS_Store
+# Written at deploy by rct/system/scripts/write_code_version.sh
+CODE_VERSION
+backups/
+# Data and participant identifiers are not distributed
+pilot/data/
+pilot/system/experiments/
+pilot/system/logs/

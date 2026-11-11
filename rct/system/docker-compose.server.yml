@@ -1,0 +1,59 @@
+name: cs-rct
+# The CS service on the EUT INT machine:
+#   docker compose -f docker-compose.server.yml up -d --build
+# Differences from docker-compose.yml, which is for local tests:
+# - no Artemis broker: the consumer reads the EUT broker named in .env;
+# - the database publishes no port (5433 is taken by the pilot's database);
+# - the API listens on 127.0.0.1:8011 only, and joins the network airflow_default as
+#   cs-rct-api, where the Cronicle container reaches it (http://cs-rct-api:8000);
+# - the CA certificate of the EUT broker is mounted from ~/artemis.
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: cs
+      POSTGRES_PASSWORD: cs
+      POSTGRES_DB: cs_rct
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  cs-api:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://cs:cs@postgres:5432/cs_rct
+      ARTEMIS_CA_CERT: /certs/artemis-ca.crt
+      TZ: ${TZ:-Europe/Madrid}   # only the time of the logs; the service works in UTC and in each participant's zone
+    volumes:
+      - ${HOME}/artemis/artemis-ca.crt:/certs/artemis-ca.crt:ro
+      - ./backups:/app/backups   # daily copies of the database (POST /backup)
+    ports:
+      - "127.0.0.1:8011:8000"
+    networks:
+      default:
+      airflow_default:
+        aliases: [cs-rct-api]
+    depends_on: [postgres]
+    restart: unless-stopped
+
+  cs-consumer:
+    build: .
+    command: ["python", "-m", "cs_rct.artemis_consumer"]
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://cs:cs@postgres:5432/cs_rct
+      ARTEMIS_CA_CERT: /certs/artemis-ca.crt
+      TZ: ${TZ:-Europe/Madrid}
+    volumes:
+      - ${HOME}/artemis/artemis-ca.crt:/certs/artemis-ca.crt:ro
+    depends_on: [postgres]
+    restart: unless-stopped
+    profiles: ["consumer"]   # started only on purpose: it takes the messages off the POLIMI queue
+
+volumes:
+  postgres_data:
+
+networks:
+  airflow_default:
+    external: true

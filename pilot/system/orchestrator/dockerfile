@@ -1,0 +1,19 @@
+FROM python:3.13.1
+
+WORKDIR /app
+ENV PYTHONPATH=/app
+
+# 1) System deps (Docker CLI) – this is cheap compared to pip
+RUN apt-get update && \
+    apt-get install -y docker.io && \
+    rm -rf /var/lib/apt/lists/*
+
+# 2) Python deps for orchestrator
+COPY orchestrator/requirements.txt /tmp/requirements_orchestrator.txt
+RUN pip install --no-cache-dir -r /tmp/requirements_orchestrator.txt
+
+# 3) Now copy code
+COPY orchestrator /app/orchestrator
+COPY cs_module /app/cs_module
+
+CMD ["python", "-u", "-m", "orchestrator.orchestrator"]

@@ -1,0 +1,10 @@
+# Same STOMP client version as the EUT example consumer (eut_examples/requirements.txt)
+stomp.py==9.0.0
+psycopg[binary]==3.3.6
+numpy==2.2.3
+flask==3.1.0
+gunicorn==26.2.0
+requests==2.32.3
+# Only for the scripts that build catalogue/ from the clinical workbooks
+openpyxl==3.1.5
+pytest==9.1.1

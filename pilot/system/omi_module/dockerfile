@@ -1,0 +1,13 @@
+FROM python:3.13.1
+
+WORKDIR /app
+ENV PYTHONPATH=/app
+
+# deps first
+COPY omi_module/requirements.txt /tmp/requirements_omi_module.txt
+RUN pip install --no-cache-dir -r /tmp/requirements_omi_module.txt
+
+# then code
+COPY omi_module /app/omi_module
+
+CMD ["python", "-u", "-m", "omi_module.omi_api"]

@@ -1,0 +1,64 @@
+services:
+
+  cs_module:
+    build:
+      context: ../
+      dockerfile: cs_module/Dockerfile 
+    environment:
+      - DS_ENABLE_FEATURE_AUDIT=1
+      - DS_STORE_FEATURE_VECTOR=1
+      - DS_STORE_PARAM_VAR=1      
+      - CS_USE_REAL_TIME=${CS_USE_REAL_TIME:-true}   # default live
+      - DB_HOST=cs_db
+      - DB_NAME=cs_data
+      - DB_USER=cs_user
+      - DB_PASSWORD=cs_password
+      - CS_LOG_UPDATES=stats
+      - LOG_LEVEL=DEBUG   
+      # ---- New, purely metadata for DataStorage ----
+      - ENV_NAME=${CS_ENV_NAME:-prod}                       # maps to runs.env_name
+      - STUDY_TAG=${CS_STUDY_TAG:-prod_2025Q4}              # runs.study_tag
+      - PIPELINE_DESCRIPTION=${CS_PIPELINE_DESCRIPTION:-cs_prod}  # runs.description
+      # Optional: override policy_name instead of relying on config.MAB_TYPE
+      # - POLICY_NAME=${CS_POLICY_NAME:-ProdPolicyV1}
+      # Timestamp (ISO UTC) when the new app version was published to the store.
+      # Users enrolled at or after this date default to the new bandit set.
+      # Leave unset (or empty) to treat all users as old-version.
+      - CS_APP_RELEASE_DATE=2026-06-17T13:56:00Z # for PRO env
+
+    ports:
+      - "8010:8000"
+    depends_on:
+      cs_db:
+        condition: service_healthy
+
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8000/health"]
+      interval: 10s
+      retries: 10
+      start_period: 5s
+    networks:
+      - airflow_default  
+
+  cs_db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: cs_data
+      POSTGRES_USER: cs_user
+      POSTGRES_PASSWORD: cs_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - ../postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "cs_user"]
+      interval: 10s
+      retries: 10
+      start_period: 5s  
+    networks:
+      - airflow_default
+
+networks:
+  airflow_default:
+    external: true

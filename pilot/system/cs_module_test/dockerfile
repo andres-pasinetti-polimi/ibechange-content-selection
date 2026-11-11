@@ -1,0 +1,18 @@
+# Use a lightweight Python image
+FROM python:3.13.1
+
+# Set the working directory
+WORKDIR /
+ENV PYTHONPATH=/
+# Copy everything inside the recommender_system directory
+COPY . /cs_module
+
+RUN pip install -r /cs_module/requirements.txt
+
+# Run the main script
+CMD ["python", "-u", "-m", "cs_module.cs_api"]
+
+
+
+
+

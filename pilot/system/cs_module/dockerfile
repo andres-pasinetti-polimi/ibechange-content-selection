@@ -1,0 +1,18 @@
+# Use a lightweight Python image
+FROM python:3.13.1
+
+# Set the working directory
+WORKDIR /app
+ENV PYTHONPATH=/app
+
+# 1) Copy only requirements first → this changes rarely
+COPY cs_module/requirements.txt /tmp/requirements_cs_module.txt
+
+# 2) Install dependencies once, cached until requirements.txt changes
+RUN pip install --no-cache-dir -r /tmp/requirements_cs_module.txt
+
+# 3) Now copy the actual code. Changing code won't rebuild deps.
+COPY cs_module /app/cs_module
+
+# Run the main script
+CMD ["python", "-u", "-m", "cs_module.cs_api"]

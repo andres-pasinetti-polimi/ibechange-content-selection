@@ -1,0 +1,141 @@
+option_id,questionnaire,pillar_id,question_code,tag,hapa_stage,subdomains
+50fe0a0e-9246-4ce2-a55f-c016572b1831,questionnaire-comb-hapa-alcohol,AO,7db1021b1a304858891a27be280b61d7,pre-intender,pre-intender,
+239cca6b-3a85-459f-92fd-413b918cdba5,questionnaire-comb-hapa-alcohol,AO,7db1021b1a304858891a27be280b61d7,"pre-intender,motivational",pre-intender,
+47404872-964e-4544-8bd0-5daa9e53cc94,questionnaire-comb-hapa-alcohol,AO,7db1021b1a304858891a27be280b61d7,intender,intender,
+374d79ae-e87b-4d56-b72f-c6c2e759b251,questionnaire-comb-hapa-alcohol,AO,7db1021b1a304858891a27be280b61d7,actor,actor,
+829cd959-063f-49b0-8efe-46db9622c7a8,questionnaire-comb-hapa-alcohol,AO,ee757339509947098773d9d42229a31f,psychological_capability,,psychological capability
+8a34fd65-1bbc-478d-b6dd-4d887b9542a3,questionnaire-comb-hapa-alcohol,AO,ee757339509947098773d9d42229a31f,"sychological_capability,reflective_motivation",,psychological capability;reflective motivation
+ce408ad9-ff8e-4305-b985-85f69b4a175d,questionnaire-comb-hapa-alcohol,AO,ee757339509947098773d9d42229a31f,"reflective_motivation, social_opportunity",,reflective motivation;social opportunity
+d59223d2-c059-4c4e-a176-c33074429208,questionnaire-comb-hapa-alcohol,AO,ee757339509947098773d9d42229a31f,"reflective_motivation, social_opportunity",,reflective motivation;social opportunity
+e79d12d3-4f78-494d-9074-7c228516d84e,questionnaire-comb-hapa-alcohol,AO,ee757339509947098773d9d42229a31f,"automatic_motivation,social_opportunity",,automatic motivation;social opportunity
+c719852a-df9e-4f72-b1a3-ee98cb2d391a,questionnaire-comb-hapa-alcohol,AO,ee757339509947098773d9d42229a31f,automatic_motivation,,automatic motivation
+e6ee80e6-d9c9-4142-8785-336a778bcf42,questionnaire-comb-hapa-alcohol,AO,12b459cb4f814fcb9cd1fdee08892b6e,reflective_motivation,,reflective motivation
+e7f0982a-4f3c-4ea3-9fa5-1711100671d4,questionnaire-comb-hapa-alcohol,AO,12b459cb4f814fcb9cd1fdee08892b6e,psychological_capability,,psychological capability
+16ab19c0-4647-4946-9f16-2933a48a8d32,questionnaire-comb-hapa-alcohol,AO,12b459cb4f814fcb9cd1fdee08892b6e,automatic_motivation,,automatic motivation
+50714104-4a73-4802-b4c4-3984d81bbcd5,questionnaire-comb-hapa-alcohol,AO,12b459cb4f814fcb9cd1fdee08892b6e,"social_opportunity, psychological_capability, automatic_motivation",,automatic motivation;psychological capability;social opportunity
+3c5ad4b3-6e56-4373-b726-7baf27489499,questionnaire-comb-hapa-alcohol,AO,12b459cb4f814fcb9cd1fdee08892b6e,"social_opportunity,reflective_motivation",,reflective motivation;social opportunity
+1dea40b5-b96c-4160-9d20-bf78169bd656,questionnaire-comb-hapa-alcohol,AO,12b459cb4f814fcb9cd1fdee08892b6e,automatic_motivation,,automatic motivation
+13fc031e-6857-4baf-b8dc-2f258822ac1f,questionnaire-comb-hapa-alcohol,AO,12b459cb4f814fcb9cd1fdee08892b6e,reflective_motivation,,reflective motivation
+a4c9f32b-9816-41ee-9b0f-195b2a138589,questionnaire-comb-hapa-alcohol,AO,2dc48af21b384fc095117d85f3e76ade,psychological_capability,,psychological capability
+02edf818-41fb-4fd6-af95-76b2e9010789,questionnaire-comb-hapa-alcohol,AO,2dc48af21b384fc095117d85f3e76ade,automatic_motivation,,automatic motivation
+fb990241-ded6-42b3-9182-143ae16031e9,questionnaire-comb-hapa-alcohol,AO,2dc48af21b384fc095117d85f3e76ade,"social_opportunity, psychological_capability, automatic_motivation",,automatic motivation;psychological capability;social opportunity
+17671edd-32ee-4f8d-8723-1256cd8d112b,questionnaire-comb-hapa-alcohol,AO,2dc48af21b384fc095117d85f3e76ade,"reflective_motivation,social_opportunity",,reflective motivation;social opportunity
+317090f6-c51a-4f8b-8cf3-19d51a7a56d1,questionnaire-comb-hapa-alcohol,AO,2dc48af21b384fc095117d85f3e76ade,automatic_motivation,,automatic motivation
+a504d52c-2ed9-416f-bbba-bbed23f2f017,questionnaire-comb-hapa-alcohol,AO,2dc48af21b384fc095117d85f3e76ade,"reflective_motivation,maintenance_self_efficacy",,reflective motivation
+c70a7958-9a9f-4891-8714-44eaf8728c6b,questionnaire-comb-hapa-physical-activity,PO,6259899237324528ba9792953ea3c113,,,
+ec654dcc-5339-4ed2-8f29-8d3cd09c230d,questionnaire-comb-hapa-physical-activity,PO,6259899237324528ba9792953ea3c113,psychological_capability,,psychological capability
+c8fa8e84-36ad-43fa-befe-f67ffe6983b3,questionnaire-comb-hapa-physical-activity,PO,8d6e4cf542aa4f98a3db6c99186dd5b3,,,
+04392a91-e5d2-4d8f-be71-d767ec022d15,questionnaire-comb-hapa-physical-activity,PO,8d6e4cf542aa4f98a3db6c99186dd5b3,psychological_capability,,psychological capability
+f8464509-fbcb-488c-a2cd-c33801a8c2d7,questionnaire-comb-hapa-physical-activity,PO,105a85e89d8e4c3fac8537766e58a065,,,
+7d13aeb9-e43f-4332-8f26-560699b6093f,questionnaire-comb-hapa-physical-activity,PO,105a85e89d8e4c3fac8537766e58a065,physical_opportunity,,physical opportunity
+bcea5032-e38d-4f96-b9cd-13bea2728509,questionnaire-comb-hapa-physical-activity,PO,105a85e89d8e4c3fac8537766e58a065,physical_opportunity,,physical opportunity
+6227b97b-eefd-4c26-b648-d55fce860c54,questionnaire-comb-hapa-physical-activity,PO,4885c09b1be041cea3f4cdc51bfb636c,,,
+ed41ef81-058a-4f11-9c57-b319506b8a3f,questionnaire-comb-hapa-physical-activity,PO,4885c09b1be041cea3f4cdc51bfb636c,,,
+50e1c8d3-2999-41a1-83e1-86613615d76e,questionnaire-comb-hapa-physical-activity,PO,63b2a5777309444e8991c5c80ea53fef,reflective_motivation,,reflective motivation
+b4c46350-fc10-4482-b807-e55123e3a2b0,questionnaire-comb-hapa-physical-activity,PO,63b2a5777309444e8991c5c80ea53fef,automatic_motivation,,automatic motivation
+0e4dd555-391d-4693-b364-3c734a7fde81,questionnaire-comb-hapa-physical-activity,PO,63b2a5777309444e8991c5c80ea53fef,"automatic_motivation, reflective_motivation",,automatic motivation;reflective motivation
+618af38e-4147-4c7b-9703-e8b31d52ed3e,questionnaire-comb-hapa-physical-activity,PO,9ea750b766264af2900ad44320026978,,,
+266eb257-453d-413c-ac11-20670fd48aae,questionnaire-comb-hapa-physical-activity,PO,9ea750b766264af2900ad44320026978,social_opportunity,,social opportunity
+e26b6474-cf4f-4a37-8250-8d72b60daecc,questionnaire-comb-hapa-physical-activity,PO,44f0214ed4534deaa905d55a3feae2aa,,,
+d53b4320-9fd2-4869-81f3-9438d8788f23,questionnaire-comb-hapa-physical-activity,PO,44f0214ed4534deaa905d55a3feae2aa,reflective_motivation,,reflective motivation
+2230538c-da79-49fa-85e1-ed59eba09818,questionnaire-comb-hapa-smoking,SO,8c9f963b89a74ec89e4b7a554b6419b1,pre-intender,pre-intender,
+5612dc33-3494-46c7-84a1-4971bf44053c,questionnaire-comb-hapa-smoking,SO,8c9f963b89a74ec89e4b7a554b6419b1,"pre-intender, motivational",pre-intender,
+3386e8bd-a804-4e56-aaec-5d716930b074,questionnaire-comb-hapa-smoking,SO,8c9f963b89a74ec89e4b7a554b6419b1,intender,intender,
+7456a3d1-ff2d-4b57-990a-3234e3eca6f3,questionnaire-comb-hapa-smoking,SO,8c9f963b89a74ec89e4b7a554b6419b1,actor,actor,
+ae4bbc9e-e473-4fcd-abd9-7d7684ca0252,questionnaire-comb-hapa-smoking,SO,f7c325b838454d73a3aba7f8abc6237f,psychological_capability,,psychological capability
+3026bb51-8f3a-424f-bf20-8c666c16e0c4,questionnaire-comb-hapa-smoking,SO,f7c325b838454d73a3aba7f8abc6237f,"psychological_capability, reflective_motivation",,psychological capability;reflective motivation
+35e61712-33b1-4780-a097-9c18540c2bd5,questionnaire-comb-hapa-smoking,SO,f7c325b838454d73a3aba7f8abc6237f,"social_opportunity, reflective_motivation",,reflective motivation;social opportunity
+05989d68-c2ed-4ce9-a176-0f254c51473c,questionnaire-comb-hapa-smoking,SO,f7c325b838454d73a3aba7f8abc6237f,"social_opportunity, reflective_motivation",,reflective motivation;social opportunity
+98dbb5de-8e19-4c65-913e-168d98b01d04,questionnaire-comb-hapa-smoking,SO,f7c325b838454d73a3aba7f8abc6237f,"automatic_motivation, social_opportunity",,automatic motivation;social opportunity
+2e734822-3504-439d-92f3-6239189aba16,questionnaire-comb-hapa-smoking,SO,f7c325b838454d73a3aba7f8abc6237f,automatic_motivation,,automatic motivation
+2b775b18-17fd-4fd5-947f-91d947a684a0,questionnaire-comb-hapa-smoking,SO,60c01a6f476c4fbe98367ef083242e41,reflective_motivation,,reflective motivation
+4dc9483a-46b5-44b5-b3c7-d7b2e68912d9,questionnaire-comb-hapa-smoking,SO,60c01a6f476c4fbe98367ef083242e41,psychological_capability,,psychological capability
+79c74833-3211-4f49-81fe-e3b49b6cecc1,questionnaire-comb-hapa-smoking,SO,60c01a6f476c4fbe98367ef083242e41,automatic_motivation,,automatic motivation
+20a93e86-e6fe-4bd0-9904-cdb1970b8f24,questionnaire-comb-hapa-smoking,SO,60c01a6f476c4fbe98367ef083242e41,"social_opportunity, psychologica_capability, automatic_motivation",,automatic motivation;psychological capability;social opportunity
+2e42d030-2df7-4999-a8f5-157a554c03a5,questionnaire-comb-hapa-smoking,SO,60c01a6f476c4fbe98367ef083242e41,"social_opportunity,reflective_motivation",,reflective motivation;social opportunity
+ed18b523-062a-41cf-922e-594d8c0bec01,questionnaire-comb-hapa-smoking,SO,60c01a6f476c4fbe98367ef083242e41,automatic_motivation,,automatic motivation
+60f00225-99be-48df-958b-8750d2f01181,questionnaire-comb-hapa-smoking,SO,60c01a6f476c4fbe98367ef083242e41,reflective_motivation,,reflective motivation
+cf806128-4be8-4111-a60d-ad3cae38af90,questionnaire-comb-hapa-smoking,SO,ee0b79f047124d1393e9c7afcc540326,psychological_capability,,psychological capability
+b6476111-713a-4fc4-b4fa-97a66a2b5f88,questionnaire-comb-hapa-smoking,SO,ee0b79f047124d1393e9c7afcc540326,"psychological_capability,reflective_motivation, automatic_motivation",,automatic motivation;psychological capability;reflective motivation
+dc5b6c52-164c-4eef-9172-501c77a1e452,questionnaire-comb-hapa-smoking,SO,ee0b79f047124d1393e9c7afcc540326,physical_opportunity,,physical opportunity
+96d99e01-f44e-455e-9cad-2789712926db,questionnaire-comb-hapa-smoking,SO,ee0b79f047124d1393e9c7afcc540326,automatic_motivation,,automatic motivation
+3f11531b-dacd-4910-b471-12c1cc6dea51,questionnaire-comb-hapa-smoking,SO,ee0b79f047124d1393e9c7afcc540326,"social_opportunity, automatic_motivation",,automatic motivation;social opportunity
+bb6587df-96c8-4f9b-803a-4c9afbc78344,questionnaire-comb-hapa-smoking,SO,ee0b79f047124d1393e9c7afcc540326,"reflective_motivation,social_opportunity",,reflective motivation;social opportunity
+cb5d1c27-59f6-43c6-852c-2920ffedc665,questionnaire-comb-hapa-smoking,SO,ee0b79f047124d1393e9c7afcc540326,automatic_motivation,,automatic motivation
+d0926746-1f6f-4d1f-8168-506d97d09821,questionnaire-comb-hapa-smoking,SO,ee0b79f047124d1393e9c7afcc540326,"reflective_motivation,maintenance_self_efficacy",,reflective motivation
+b7d54d4a-0d33-4713-ae85-a67a92f24d8d,questionnaire-comb-nutrition-common,NO,fd57b097da484cbcb90ef2ebb2f167f3,,,
+ee841d1c-03cf-474e-a929-89546cb2c435,questionnaire-comb-nutrition-common,NO,fd57b097da484cbcb90ef2ebb2f167f3,social_opportunity,,social opportunity
+04a1d68e-601a-4d54-aa69-87eff7c6f4a8,questionnaire-comb-nutrition-common,NO,3d7cb2959a3044e1b7ab2328b34affd0,,,
+625db2be-f770-4741-8280-b9783dd08238,questionnaire-comb-nutrition-common,NO,3d7cb2959a3044e1b7ab2328b34affd0,reflective_motivation,,reflective motivation
+f143bad1-baba-4653-b33f-a91c3fb3d200,questionnaire-comb-nutrition-fruits-vegetables,NO,17b6db0d8e884b7282eb6630456267dd,,,
+026ccd44-2f4b-4093-9b9c-324ccc383d9a,questionnaire-comb-nutrition-fruits-vegetables,NO,17b6db0d8e884b7282eb6630456267dd,psychological_capability,,psychological capability
+3476780f-418a-4a23-b9a5-dc720514165d,questionnaire-comb-nutrition-fruits-vegetables,NO,17b6db0d8e884b7282eb6630456267dd,psychological_capability,,psychological capability
+29905ef4-0eb3-4c93-81d2-717323b9ec74,questionnaire-comb-nutrition-fruits-vegetables,NO,e816683363e840578ca12fe97ad377b8,,,
+69a893d2-f505-4da3-b850-f100c0e75281,questionnaire-comb-nutrition-fruits-vegetables,NO,e816683363e840578ca12fe97ad377b8,physical_opportunity,,physical opportunity
+e60d235c-fc91-4de3-96d0-cb4b3a250d54,questionnaire-comb-nutrition-fruits-vegetables,NO,e816683363e840578ca12fe97ad377b8,physical_opportunity,,physical opportunity
+ea66613e-6663-40d0-90e0-b9fa3e4cf73e,questionnaire-comb-nutrition-healthy-foods,NO,129da168b46844cd827c3d83b7f18d60,,,
+d592a7c3-6970-465d-b407-40ab4dc755ee,questionnaire-comb-nutrition-healthy-foods,NO,129da168b46844cd827c3d83b7f18d60,reflective_motivation,,reflective motivation
+f143bad1-baba-4653-b33f-a91c3fb3d200,questionnaire-comb-nutrition-legumes-whole-grains-nuts,NO,17b6db0d8e884b7282eb6630456267dd,,,
+026ccd44-2f4b-4093-9b9c-324ccc383d9a,questionnaire-comb-nutrition-legumes-whole-grains-nuts,NO,17b6db0d8e884b7282eb6630456267dd,psychological_capability,,psychological capability
+3476780f-418a-4a23-b9a5-dc720514165d,questionnaire-comb-nutrition-legumes-whole-grains-nuts,NO,17b6db0d8e884b7282eb6630456267dd,psychological_capability,,psychological capability
+d53da67e-4d5d-4d1f-8958-d96097337130,questionnaire-comb-nutrition-legumes-whole-grains-nuts,NO,17b6db0d8e884b7282eb6630456267dd,psychological_capability,,psychological capability
+29905ef4-0eb3-4c93-81d2-717323b9ec74,questionnaire-comb-nutrition-legumes-whole-grains-nuts,NO,e816683363e840578ca12fe97ad377b8,,,
+69a893d2-f505-4da3-b850-f100c0e75281,questionnaire-comb-nutrition-legumes-whole-grains-nuts,NO,e816683363e840578ca12fe97ad377b8,physical_opportunity,,physical opportunity
+e60d235c-fc91-4de3-96d0-cb4b3a250d54,questionnaire-comb-nutrition-legumes-whole-grains-nuts,NO,e816683363e840578ca12fe97ad377b8,physical_opportunity,,physical opportunity
+57468387-b35e-4c3d-80f2-f9002b7c6385,questionnaire-comb-nutrition-unhealthy-food,NO,03ee2fedaaa04e7690950317f562aada,,,
+a8ef0708-6b44-43eb-a9a8-3192f063f644,questionnaire-comb-nutrition-unhealthy-food,NO,03ee2fedaaa04e7690950317f562aada,psychological_capability,,psychological capability
+c8627123-a3fe-472f-a14b-8917246a74d5,questionnaire-comb-nutrition-unhealthy-food,NO,03ee2fedaaa04e7690950317f562aada,psychological_capability,,psychological capability
+02550dd8-ba49-49a5-a321-2551169b710e,questionnaire-comb-nutrition-unhealthy-food,NO,03ee2fedaaa04e7690950317f562aada,psychological_capability,,psychological capability
+57f0e76b-a33f-4bf4-875b-9e38da378c92,questionnaire-comb-nutrition-unhealthy-food,NO,03ee2fedaaa04e7690950317f562aada,psychological_capability,,psychological capability
+a7b42dbf-b73a-4ae4-8cca-29032c2d37ad,questionnaire-comb-nutrition-unhealthy-food,NO,03ee2fedaaa04e7690950317f562aada,psychological_capability,,psychological capability
+7c88eacb-c477-4565-a698-d63623b5eaa6,questionnaire-comb-nutrition-unhealthy-food,NO,7df94503473d4e4c84d6a496c451b9b7,,,
+ab4b34b7-abcb-4fa5-ab5c-a42e7e02d2d0,questionnaire-comb-nutrition-unhealthy-food,NO,7df94503473d4e4c84d6a496c451b9b7,psychological_capability,,psychological capability
+6ed52d7f-cb4f-49af-882d-718b3867b3ae,questionnaire-comb-nutrition-unhealthy-food,NO,7df94503473d4e4c84d6a496c451b9b7,psychological_capability,,psychological capability
+44985ae7-b86a-4253-a9ac-a724826cee36,questionnaire-comb-nutrition-unhealthy-food,NO,7df94503473d4e4c84d6a496c451b9b7,psychological_capability,,psychological capability
+8984af65-a12c-4d01-bfcd-a482a5efedd8,questionnaire-comb-nutrition-unhealthy-food,NO,7df94503473d4e4c84d6a496c451b9b7,psychological_capability,,psychological capability
+5ab5847c-3ded-47ee-9527-0b00fd50868e,questionnaire-comb-nutrition-unhealthy-food,NO,7df94503473d4e4c84d6a496c451b9b7,psychological_capability,,psychological capability
+40f353dc-7162-4c20-bdf1-6e8634799d10,questionnaire-comb-nutrition-unhealthy-food,NO,7d2740d299a64419bfb963603125e25c,,,
+05414cd5-c2d9-4aa4-b0d9-6f8493bcae7c,questionnaire-comb-nutrition-unhealthy-food,NO,7d2740d299a64419bfb963603125e25c,physical_opportunity,,physical opportunity
+b415c106-83c2-4d20-b5ea-81ecbc649233,questionnaire-comb-nutrition-unhealthy-food,NO,7d2740d299a64419bfb963603125e25c,physical_opportunity,,physical opportunity
+68eebf03-b00a-4458-abae-581932f248dd,questionnaire-comb-nutrition-unhealthy-food,NO,5d92a142f1c74c3ca97cba9370d11981,,,
+7b7ed903-f1f3-48f0-995f-00b009ff5408,questionnaire-comb-nutrition-unhealthy-food,NO,5d92a142f1c74c3ca97cba9370d11981,,,
+68c4ca28-4b35-4b33-9ecf-6db291ee32ed,questionnaire-comb-nutrition-unhealthy-food,NO,35a41de0549443ea816745ede67e956c,reflective_motivation,,reflective motivation
+b4e5e7d2-eb7b-4bf3-9e86-be61be3eacdd,questionnaire-comb-nutrition-unhealthy-food,NO,35a41de0549443ea816745ede67e956c,"social_opportunity, psychological_capability, automatic_motivation",,automatic motivation;psychological capability;social opportunity
+40a0e48d-f3f6-4c38-b12d-2f8150ee329c,questionnaire-comb-nutrition-unhealthy-food,NO,35a41de0549443ea816745ede67e956c,automatic_motivation,,automatic motivation
+bfd76e26-b6bf-4155-95ba-9fd83d272aaf,questionnaire-comb-psychosocial-anxiety,EO,cfe7c31ae3cb4408af7dd7792d2257d5,psychological_capability,,psychological capability
+8b4e6121-9e75-48c8-bab7-95ff5f9b499d,questionnaire-comb-psychosocial-anxiety,EO,cfe7c31ae3cb4408af7dd7792d2257d5,psychological_capability,,psychological capability
+dedfffd1-af1f-4b61-b770-a30ff725bf09,questionnaire-comb-psychosocial-anxiety,EO,cfe7c31ae3cb4408af7dd7792d2257d5,physical_opportunity,,physical opportunity
+10404662-9315-45fa-988c-8657ca5255c3,questionnaire-comb-psychosocial-anxiety,EO,cfe7c31ae3cb4408af7dd7792d2257d5,social_opportunity,,social opportunity
+ccd88722-2085-4744-a305-7a546977c539,questionnaire-comb-psychosocial-anxiety,EO,cfe7c31ae3cb4408af7dd7792d2257d5,automatic_motivation,,automatic motivation
+6444025b-ad01-48a3-bba4-68e63e780523,questionnaire-comb-psychosocial-anxiety,EO,cfe7c31ae3cb4408af7dd7792d2257d5,automatic_motivation,,automatic motivation
+4f1d6261-1e91-4d49-be0b-e2926ca4f59a,questionnaire-comb-psychosocial-anxiety,EO,cfe7c31ae3cb4408af7dd7792d2257d5,psychological_capability,,psychological capability
+d38d292f-1e8e-40e8-9017-c0a1562b5bb1,questionnaire-comb-psychosocial-depression,EO,ddf5823da02a4005a69512278cb48e70,psychological_capability,,psychological capability
+7903fa7e-9761-4fcf-af11-b7c3e69f7bc3,questionnaire-comb-psychosocial-depression,EO,ddf5823da02a4005a69512278cb48e70,psychological_capability,,psychological capability
+5c2dad19-040c-4874-84f0-cc1fca6e4339,questionnaire-comb-psychosocial-depression,EO,ddf5823da02a4005a69512278cb48e70,physical_opportunity,,physical opportunity
+f3c1e0a5-4d8b-4f7e-9c6b-2f1e5c3a1b2d,questionnaire-comb-psychosocial-depression,EO,ddf5823da02a4005a69512278cb48e70,social_opportunity,,social opportunity
+e1f2c3d4-5b6a-7c8d-9e0f-1a2b3c4d5e6f,questionnaire-comb-psychosocial-depression,EO,ddf5823da02a4005a69512278cb48e70,automatic_motivation,,automatic motivation
+a1b2c3d4-5e6f-7g8h-9i0j-1k2l3m4n5o6p,questionnaire-comb-psychosocial-depression,EO,ddf5823da02a4005a69512278cb48e70,automatic_motivation,,automatic motivation
+e3679942-6100-49a4-8ee9-c6ac2307de29,questionnaire-comb-psychosocial-depression,EO,ddf5823da02a4005a69512278cb48e70,psychological_capability,,psychological capability
+8e5f0890-8741-4659-a27f-e64e229b7233,questionnaire-comb-psychosocial-insomnia,EO,06bb5b88ed1044f6b09f6197539cc52b,,,
+cc06168d-b432-422a-9611-d3b59185b7a7,questionnaire-comb-psychosocial-insomnia,EO,06bb5b88ed1044f6b09f6197539cc52b,,,
+7fcde487-8376-4a83-971c-b200964b97d8,questionnaire-comb-psychosocial-insomnia,EO,06bb5b88ed1044f6b09f6197539cc52b,psychological_capability,,psychological capability
+c6cdee98-2caf-4ce1-a2dd-3d6b2e35a567,questionnaire-comb-psychosocial-insomnia,EO,06bb5b88ed1044f6b09f6197539cc52b,automatic_motivation,,automatic motivation
+0b3b4aed-6fb6-4c6c-812d-7a94be25af6c,questionnaire-comb-psychosocial-insomnia,EO,06bb5b88ed1044f6b09f6197539cc52b,psychological_capability,,psychological capability
+7fbf0d11-8201-4947-a951-f837fd92020f,questionnaire-comb-psychosocial-insomnia,EO,06bb5b88ed1044f6b09f6197539cc52b,automatic_motivation,,automatic motivation
+4451cf6d-b959-47dd-a7df-ce608499d292,questionnaire-comb-psychosocial-insomnia,EO,06bb5b88ed1044f6b09f6197539cc52b,psychological_capability,,psychological capability
+bb745b53-2f44-4b45-ada4-2aeccf0a5ab3,questionnaire-comb-psychosocial-insomnia,EO,06bb5b88ed1044f6b09f6197539cc52b,"physical_opportunity,reflective_motivation",,physical opportunity;reflective motivation
+2937d85f-85af-4ad7-969b-f875aa2b297d,questionnaire-comb-psychosocial-perceived-stress,EO,ef22680d27a44c11b24f0f19e86d8ae6,psychological_capability,,psychological capability
+ae748039-45bb-491d-a44f-b6ef70e25214,questionnaire-comb-psychosocial-perceived-stress,EO,ef22680d27a44c11b24f0f19e86d8ae6,physical_opportunity,,physical opportunity
+7619f877-78de-4844-b381-e4e2d6d09a0a,questionnaire-comb-psychosocial-perceived-stress,EO,ef22680d27a44c11b24f0f19e86d8ae6,social_opportunity,,social opportunity
+f4f35afb-5ef8-4345-bfec-75b028194c17,questionnaire-comb-psychosocial-perceived-stress,EO,ef22680d27a44c11b24f0f19e86d8ae6,automatic_motivation,,automatic motivation
+0f1a992d-5f52-4994-a540-adcb7d100429,questionnaire-comb-psychosocial-perceived-stress,EO,ef22680d27a44c11b24f0f19e86d8ae6,reflective_motivation,,reflective motivation
+54b1dad6-57e9-47f7-9932-c7b01941a576,questionnaire-comb-psychosocial-perceived-stress,EO,ef22680d27a44c11b24f0f19e86d8ae6,psychological_capability,,psychological capability
+dc985732-a8f4-4d46-9e50-e06b9ab25209,questionnaire-comb-psychosocial-social-support,EO,c4aca341af0a44a3aa30c1e48be0f2d6,,,
+d46fae40-81de-47a7-a4ee-ddd5aa4c7ceb,questionnaire-comb-psychosocial-social-support,EO,c4aca341af0a44a3aa30c1e48be0f2d6,,,
+5e3a5881-8d4b-444b-bd9e-6702545662c7,questionnaire-comb-psychosocial-social-support,EO,c4aca341af0a44a3aa30c1e48be0f2d6,,,
+68952fce-8417-4b62-9c35-c57d131b66f7,questionnaire-comb-psychosocial-social-support,EO,b8e88b8b28754464b09b57b37aaa1af2,psychological_capability,,psychological capability
+6cc20a99-41d0-4177-b5c4-e8dadb692a88,questionnaire-comb-psychosocial-social-support,EO,b8e88b8b28754464b09b57b37aaa1af2,psychological_capability,,psychological capability
+6579dfbd-2f32-49d2-970a-29b472c4e9a9,questionnaire-comb-psychosocial-social-support,EO,b8e88b8b28754464b09b57b37aaa1af2,social_opportunity,,social opportunity
+5ff649f0-075d-4bf7-9812-f499af0c8727,questionnaire-comb-psychosocial-social-support,EO,b8e88b8b28754464b09b57b37aaa1af2,"psychological_capability,reflective_motivation",,psychological capability;reflective motivation
+033c87e1-9fef-4eca-a0ac-b4e7144db441,questionnaire-comb-psychosocial-social-support,EO,b8e88b8b28754464b09b57b37aaa1af2,automatic_motivation,,automatic motivation
+44719d5f-b078-4990-87fe-75fd09c9ea3d,questionnaire-comb-psychosocial-social-support,EO,b8e88b8b28754464b09b57b37aaa1af2,"psychological_capability,reflective_motivation",,psychological capability;reflective motivation

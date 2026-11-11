@@ -1,0 +1,1126 @@
+{
+ "SRc1a": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc1",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc1a",
+  "text": "Synthetic text of SRc1a"
+ },
+ "SRc1b": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc1",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc1b",
+  "text": "Synthetic text of SRc1b"
+ },
+ "SRc1c": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc1",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc1c",
+  "text": "Synthetic text of SRc1c"
+ },
+ "SRc1d": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc1",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc1d",
+  "text": "Synthetic text of SRc1d"
+ },
+ "SRc1e": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc1",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc1e",
+  "text": "Synthetic text of SRc1e"
+ },
+ "SRc4a": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc4",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc4a",
+  "text": "Synthetic text of SRc4a"
+ },
+ "SRc4b": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc4",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc4b",
+  "text": "Synthetic text of SRc4b"
+ },
+ "SRc4c": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc4",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc4c",
+  "text": "Synthetic text of SRc4c"
+ },
+ "SRc4d": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc4",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc4d",
+  "text": "Synthetic text of SRc4d"
+ },
+ "SRc4e": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9"
+  ],
+  "code": "SRc4",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc4e",
+  "text": "Synthetic text of SRc4e"
+ },
+ "SRc5a": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9",
+   "SM49"
+  ],
+  "code": "SRc5",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc5a",
+  "text": "Synthetic text of SRc5a"
+ },
+ "SRc5b": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9",
+   "SM49"
+  ],
+  "code": "SRc5",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc5b",
+  "text": "Synthetic text of SRc5b"
+ },
+ "SRc5c": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9",
+   "SM49"
+  ],
+  "code": "SRc5",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc5c",
+  "text": "Synthetic text of SRc5c"
+ },
+ "SRc5d": {
+  "missions": [
+   "SM1",
+   "SM2",
+   "SM3",
+   "SM9",
+   "SM49"
+  ],
+  "code": "SRc5",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc5d",
+  "text": "Synthetic text of SRc5d"
+ },
+ "SRc6a": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc6",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc6a",
+  "text": "Synthetic text of SRc6a"
+ },
+ "SRc6b": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc6",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc6b",
+  "text": "Synthetic text of SRc6b"
+ },
+ "SRc6c": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc6",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc6c",
+  "text": "Synthetic text of SRc6c"
+ },
+ "SRc6d": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc6",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc6d",
+  "text": "Synthetic text of SRc6d"
+ },
+ "SRc6e": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc6",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc6e",
+  "text": "Synthetic text of SRc6e"
+ },
+ "SRc7a": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc7",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc7a",
+  "text": "Synthetic text of SRc7a"
+ },
+ "SRc7b": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc7",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc7b",
+  "text": "Synthetic text of SRc7b"
+ },
+ "SRc7c": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc7",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc7c",
+  "text": "Synthetic text of SRc7c"
+ },
+ "SRc7d": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc7",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc7d",
+  "text": "Synthetic text of SRc7d"
+ },
+ "SRc7e": {
+  "missions": [
+   "SM49"
+  ],
+  "code": "SRc7",
+  "type": "recommendation",
+  "pillar": "Smoking",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation SRc7e",
+  "text": "Synthetic text of SRc7e"
+ },
+ "NRc1a": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc1",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "title": "Synthetic recommendation NRc1a",
+  "text": "Synthetic text of NRc1a"
+ },
+ "NRc1b": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc1",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "title": "Synthetic recommendation NRc1b",
+  "text": "Synthetic text of NRc1b"
+ },
+ "NRc1c": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc1",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "title": "Synthetic recommendation NRc1c",
+  "text": "Synthetic text of NRc1c"
+ },
+ "NRc1d": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc1",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "title": "Synthetic recommendation NRc1d",
+  "text": "Synthetic text of NRc1d"
+ },
+ "NRc2a": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc2",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc2a",
+  "text": "Synthetic text of NRc2a"
+ },
+ "NRc2b": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc2",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc2b",
+  "text": "Synthetic text of NRc2b"
+ },
+ "NRc2c": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc2",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc2c",
+  "text": "Synthetic text of NRc2c"
+ },
+ "NRc3a": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc3",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Automatic motivation",
+  "title": "Synthetic recommendation NRc3a",
+  "text": "Synthetic text of NRc3a"
+ },
+ "NRc3b": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc3",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Automatic motivation",
+  "title": "Synthetic recommendation NRc3b",
+  "text": "Synthetic text of NRc3b"
+ },
+ "NRc3c": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc3",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Automatic motivation",
+  "title": "Synthetic recommendation NRc3c",
+  "text": "Synthetic text of NRc3c"
+ },
+ "NRc3d": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc3",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Automatic motivation",
+  "title": "Synthetic recommendation NRc3d",
+  "text": "Synthetic text of NRc3d"
+ },
+ "NRc3e": {
+  "missions": [
+   "NM1",
+   "NM5"
+  ],
+  "code": "NRc3",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Automatic motivation",
+  "title": "Synthetic recommendation NRc3e",
+  "text": "Synthetic text of NRc3e"
+ },
+ "NRc37a": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc37",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc37a",
+  "text": "Synthetic text of NRc37a"
+ },
+ "NRc37b": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc37",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc37b",
+  "text": "Synthetic text of NRc37b"
+ },
+ "NRc37c": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc37",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc37c",
+  "text": "Synthetic text of NRc37c"
+ },
+ "NRc37d": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc37",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc37d",
+  "text": "Synthetic text of NRc37d"
+ },
+ "NRc37e": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc37",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc37e",
+  "text": "Synthetic text of NRc37e"
+ },
+ "NRc38a": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc38",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc38a",
+  "text": "Synthetic text of NRc38a"
+ },
+ "NRc38b": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc38",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc38b",
+  "text": "Synthetic text of NRc38b"
+ },
+ "NRc38c": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc38",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc38c",
+  "text": "Synthetic text of NRc38c"
+ },
+ "NRc38d": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc38",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc38d",
+  "text": "Synthetic text of NRc38d"
+ },
+ "NRc38e": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc38",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Psychological capability",
+  "title": "Synthetic recommendation NRc38e",
+  "text": "Synthetic text of NRc38e"
+ },
+ "NRc39a": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc39",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "title": "Synthetic recommendation NRc39a",
+  "text": "Synthetic text of NRc39a"
+ },
+ "NRc39b": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc39",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "title": "Synthetic recommendation NRc39b",
+  "text": "Synthetic text of NRc39b"
+ },
+ "NRc39c": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc39",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "title": "Synthetic recommendation NRc39c",
+  "text": "Synthetic text of NRc39c"
+ },
+ "NRc39d": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc39",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "title": "Synthetic recommendation NRc39d",
+  "text": "Synthetic text of NRc39d"
+ },
+ "NRc39e": {
+  "missions": [
+   "NM28"
+  ],
+  "code": "NRc39",
+  "type": "recommendation",
+  "pillar": "Nutrition",
+  "com_b": "Physical opportunity",
+  "title": "Synthetic recommendation NRc39e",
+  "text": "Synthetic text of NRc39e"
+ },
+ "PRc1a": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc1",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc1a",
+  "text": "Synthetic text of PRc1a"
+ },
+ "PRc1b": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc1",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc1b",
+  "text": "Synthetic text of PRc1b"
+ },
+ "PRc1c": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc1",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc1c",
+  "text": "Synthetic text of PRc1c"
+ },
+ "PRc2a": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc2",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc2a",
+  "text": "Synthetic text of PRc2a"
+ },
+ "PRc2b": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc2",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc2b",
+  "text": "Synthetic text of PRc2b"
+ },
+ "PRc2c": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc2",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc2c",
+  "text": "Synthetic text of PRc2c"
+ },
+ "PRc2d": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc2",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc2d",
+  "text": "Synthetic text of PRc2d"
+ },
+ "PRc2e": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc2",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc2e",
+  "text": "Synthetic text of PRc2e"
+ },
+ "PRc4a": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc4",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc4a",
+  "text": "Synthetic text of PRc4a"
+ },
+ "PRc4b": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc4",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc4b",
+  "text": "Synthetic text of PRc4b"
+ },
+ "PRc4c": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc4",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc4c",
+  "text": "Synthetic text of PRc4c"
+ },
+ "PRc4d": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc4",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc4d",
+  "text": "Synthetic text of PRc4d"
+ },
+ "PRc4e": {
+  "missions": [
+   "PM1",
+   "PM2",
+   "PM3",
+   "PM4",
+   "PM13",
+   "PM93"
+  ],
+  "code": "PRc4",
+  "type": "recommendation",
+  "pillar": "Physical_activity",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation PRc4e",
+  "text": "Synthetic text of PRc4e"
+ },
+ "ERc1a": {
+  "missions": [
+   "EM1"
+  ],
+  "code": "ERc1",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation ERc1a",
+  "text": "Synthetic text of ERc1a"
+ },
+ "ERc1b": {
+  "missions": [
+   "EM1"
+  ],
+  "code": "ERc1",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation ERc1b",
+  "text": "Synthetic text of ERc1b"
+ },
+ "ERc1c": {
+  "missions": [
+   "EM1"
+  ],
+  "code": "ERc1",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation ERc1c",
+  "text": "Synthetic text of ERc1c"
+ },
+ "ERc2a": {
+  "missions": [
+   "EM1"
+  ],
+  "code": "ERc2",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Physical Opportunity",
+  "title": "Synthetic recommendation ERc2a",
+  "text": "Synthetic text of ERc2a"
+ },
+ "ERc2b": {
+  "missions": [
+   "EM1"
+  ],
+  "code": "ERc2",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Physical Opportunity",
+  "title": "Synthetic recommendation ERc2b",
+  "text": "Synthetic text of ERc2b"
+ },
+ "ERc2c": {
+  "missions": [
+   "EM1"
+  ],
+  "code": "ERc2",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Physical Opportunity",
+  "title": "Synthetic recommendation ERc2c",
+  "text": "Synthetic text of ERc2c"
+ },
+ "ERc3a": {
+  "missions": [
+   "EM1"
+  ],
+  "code": "ERc3",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Social Opportunity",
+  "title": "Synthetic recommendation ERc3a",
+  "text": "Synthetic text of ERc3a"
+ },
+ "ERc3b": {
+  "missions": [
+   "EM1"
+  ],
+  "code": "ERc3",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Social Opportunity",
+  "title": "Synthetic recommendation ERc3b",
+  "text": "Synthetic text of ERc3b"
+ },
+ "ERc3c": {
+  "missions": [
+   "EM1"
+  ],
+  "code": "ERc3",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Social Opportunity",
+  "title": "Synthetic recommendation ERc3c",
+  "text": "Synthetic text of ERc3c"
+ },
+ "ERc32a": {
+  "missions": [
+   "EM10"
+  ],
+  "code": "ERc32",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability, Physical Opportunity",
+  "title": "Synthetic recommendation ERc32a",
+  "text": "Synthetic text of ERc32a"
+ },
+ "ERc32b": {
+  "missions": [
+   "EM10"
+  ],
+  "code": "ERc32",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability, Physical Opportunity",
+  "title": "Synthetic recommendation ERc32b",
+  "text": "Synthetic text of ERc32b"
+ },
+ "ERc32c": {
+  "missions": [
+   "EM10"
+  ],
+  "code": "ERc32",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability, Physical Opportunity",
+  "title": "Synthetic recommendation ERc32c",
+  "text": "Synthetic text of ERc32c"
+ },
+ "ERc33a": {
+  "missions": [
+   "EM10"
+  ],
+  "code": "ERc33",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Physical Opportunity",
+  "title": "Synthetic recommendation ERc33a",
+  "text": "Synthetic text of ERc33a"
+ },
+ "ERc33b": {
+  "missions": [
+   "EM10"
+  ],
+  "code": "ERc33",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Physical Opportunity",
+  "title": "Synthetic recommendation ERc33b",
+  "text": "Synthetic text of ERc33b"
+ },
+ "ERc33c": {
+  "missions": [
+   "EM10"
+  ],
+  "code": "ERc33",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Physical Opportunity",
+  "title": "Synthetic recommendation ERc33c",
+  "text": "Synthetic text of ERc33c"
+ },
+ "ERc34a": {
+  "missions": [
+   "EM10"
+  ],
+  "code": "ERc34",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Social Opportunity",
+  "title": "Synthetic recommendation ERc34a",
+  "text": "Synthetic text of ERc34a"
+ },
+ "ERc34b": {
+  "missions": [
+   "EM10"
+  ],
+  "code": "ERc34",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Social Opportunity",
+  "title": "Synthetic recommendation ERc34b",
+  "text": "Synthetic text of ERc34b"
+ },
+ "ERc34c": {
+  "missions": [
+   "EM10"
+  ],
+  "code": "ERc34",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Social Opportunity",
+  "title": "Synthetic recommendation ERc34c",
+  "text": "Synthetic text of ERc34c"
+ },
+ "ERc115a": {
+  "missions": [
+   "EM31"
+  ],
+  "code": "ERc115",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation ERc115a",
+  "text": "Synthetic text of ERc115a"
+ },
+ "ERc115b": {
+  "missions": [
+   "EM31"
+  ],
+  "code": "ERc115",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation ERc115b",
+  "text": "Synthetic text of ERc115b"
+ },
+ "ERc115c": {
+  "missions": [
+   "EM31"
+  ],
+  "code": "ERc115",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability",
+  "title": "Synthetic recommendation ERc115c",
+  "text": "Synthetic text of ERc115c"
+ },
+ "ERc116a": {
+  "missions": [
+   "EM31"
+  ],
+  "code": "ERc116",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability, Physical Opportunity",
+  "title": "Synthetic recommendation ERc116a",
+  "text": "Synthetic text of ERc116a"
+ },
+ "ERc116b": {
+  "missions": [
+   "EM31"
+  ],
+  "code": "ERc116",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability, Physical Opportunity",
+  "title": "Synthetic recommendation ERc116b",
+  "text": "Synthetic text of ERc116b"
+ },
+ "ERc116c": {
+  "missions": [
+   "EM31"
+  ],
+  "code": "ERc116",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "Psychological Capability, Physical Opportunity",
+  "title": "Synthetic recommendation ERc116c",
+  "text": "Synthetic text of ERc116c"
+ },
+ "ERc117a": {
+  "missions": [
+   "EM31"
+  ],
+  "code": "ERc117",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "All",
+  "title": "Synthetic recommendation ERc117a",
+  "text": "Synthetic text of ERc117a"
+ },
+ "ERc117b": {
+  "missions": [
+   "EM31"
+  ],
+  "code": "ERc117",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "All",
+  "title": "Synthetic recommendation ERc117b",
+  "text": "Synthetic text of ERc117b"
+ },
+ "ERc117c": {
+  "missions": [
+   "EM31"
+  ],
+  "code": "ERc117",
+  "type": "recommendation",
+  "pillar": "Emotional_Wellbeing",
+  "com_b": "All",
+  "title": "Synthetic recommendation ERc117c",
+  "text": "Synthetic text of ERc117c"
+ }
+}

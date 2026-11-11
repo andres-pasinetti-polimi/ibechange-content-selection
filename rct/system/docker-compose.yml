@@ -1,0 +1,59 @@
+name: cs-rct
+# Local test environment: an Artemis broker and a PostgreSQL database.
+# The CS service itself runs from the virtual environment during development;
+# `docker compose --profile service up -d` also starts it in containers (API on 8000).
+services:
+  artemis:
+    image: apache/activemq-artemis:2.44.0
+    environment:
+      ARTEMIS_USER: artemis
+      ARTEMIS_PASSWORD: artemis
+    ports:
+      - "61613:61613"   # STOMP
+      - "8161:8161"     # web console, http://localhost:8161
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: cs
+      POSTGRES_PASSWORD: cs
+      POSTGRES_DB: cs_rct
+    ports:
+      - "5433:5432"   # 5433 on the host, to leave a local PostgreSQL on 5432 alone
+    volumes:
+      - postgres_data:/var/lib/postgresql/data   # keeps the data when containers are recreated
+
+  # The service containers read .env (broker credentials, CS_STUDY, ...) when it exists;
+  # DATABASE_URL always points to the postgres service above. Without .env the consumer
+  # reads the local broker.
+  cs-api:
+    build: .
+    profiles: ["service"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql://cs:cs@postgres:5432/cs_rct
+      ARTEMIS_HOST: ${ARTEMIS_HOST:-artemis}
+      TZ: ${TZ:-Europe/Madrid}   # only the time of the logs; the service works in UTC and in each participant's zone
+    ports:
+      - "8000:8000"
+    depends_on: [postgres]
+    restart: unless-stopped
+
+  cs-consumer:
+    build: .
+    profiles: ["service"]
+    command: ["python", "-m", "cs_rct.artemis_consumer"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql://cs:cs@postgres:5432/cs_rct
+      ARTEMIS_HOST: ${ARTEMIS_HOST:-artemis}
+      TZ: ${TZ:-Europe/Madrid}   # only the time of the logs; the service works in UTC and in each participant's zone
+    depends_on: [postgres]
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
