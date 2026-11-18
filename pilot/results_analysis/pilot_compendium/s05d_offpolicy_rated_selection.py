@@ -26,7 +26,7 @@ import json
 import numpy as np
 import pandas as pd
 
-from common import SNAPSHOT, RES_DIR, reg
+from common import SNAPSHOT, RES_DIR, reg, rating_selection_pairs
 
 BOOT = 5000
 SEED = 20261015
@@ -39,8 +39,11 @@ sm = src["sample"].apply(json.loads)
 src["p_log"] = sm.apply(lambda d: float(d["p_log"]))
 src["K"] = sm.apply(lambda d: len(dict.fromkeys(c["rec_id"] for c in d.get("candidates", []))))
 src["rec"] = src["selected_rec_ids"].str.strip("{}")
-fa = pd.read_csv(SNAPSHOT / "feature_audit.csv").rename(columns={"rec_id": "rec"})
-a = src.merge(fa[["user_id", "slot_idx", "rec", "reward"]], on=["user_id", "slot_idx", "rec"], how="left")
+# Each rating is paired with its own selection (common.rating_selection_pairs,
+# 17 Nov 2026); the earlier join on (user, slot_idx, rec) paired ratings with
+# selections of other plans.
+_pairs = rating_selection_pairs()[["id", "reward", "rating_time", "prompted"]].rename(columns={"rating_time": "rts"})
+a = src.merge(_pairs[["id", "reward"]], on="id", how="left")
 a = a[(a.K >= 2) & (a.p_log > 0)].copy()
 a["rated"] = a.reward.notna().astype(int)
 n_selections, rated_share = len(a), a.rated.mean()
@@ -54,7 +57,8 @@ UI = a.user_id.map({u: i for i, u in enumerate(users)}).values
 PI, FAV, RATED = a.pos.values, a.fav.values, a.rated.values
 LIKE = (a.reward > 0).astype(float).values
 W = ((1 / a.K) / a.p_log).values             # importance weight of uniform selection
-assert RATED.sum() == 819 and U == 63        # the analysis set of s05
+_s05 = json.loads((RES_DIR / "numbers.json").read_text())
+assert RATED.sum() == int(_s05["opN"].replace(",", "")) and U == int(_s05["opUsers"]), "not the analysis set of s05"
 
 
 def favoured_difference(m):

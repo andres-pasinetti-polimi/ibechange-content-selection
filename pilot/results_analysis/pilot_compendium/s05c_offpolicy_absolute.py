@@ -22,7 +22,7 @@ import json
 import numpy as np
 import pandas as pd
 
-from common import SNAPSHOT, RES_DIR, sigmoid, reg, eb_kappa
+from common import SNAPSHOT, RES_DIR, sigmoid, reg, eb_kappa, rating_selection_pairs
 
 BOOT = 5000
 SEED_FOLDS = 20260814    # s05's seed; its first draw assigns the user folds
@@ -39,10 +39,11 @@ src["cands"] = sm.apply(lambda d: [c["rec_id"] for c in d.get("candidates", [])]
 src["p_by_item"] = sm.apply(lambda d: d.get("mc_propensity", {}).get("p_by_item", {}))
 src["rec"] = src["selected_rec_ids"].str.strip("{}")
 
-fa = pd.read_csv(SNAPSHOT / "feature_audit.csv")
-fa["rts"] = pd.to_datetime(fa["rating_ts"], format="ISO8601", utc=True)
-j = src.merge(fa[["user_id", "slot_idx", "rec_id", "reward", "rts"]].rename(columns={"rec_id": "rec"}),
-              on=["user_id", "slot_idx", "rec"], how="inner")
+# Each rating is paired with its own selection (common.rating_selection_pairs,
+# 17 Nov 2026); the earlier join on (user, slot_idx, rec) paired ratings with
+# selections of other plans.
+_pairs = rating_selection_pairs()[["id", "reward", "rating_time", "prompted"]].rename(columns={"rating_time": "rts"})
+j = src.merge(_pairs, on="id", how="inner")
 j["cands"] = j["cands"].apply(lambda cs: list(dict.fromkeys(cs)))
 j["K"] = j["cands"].apply(len)
 j = j[(j.K >= 2) & (j.p_log > 0)].sort_values("rts").reset_index(drop=True)

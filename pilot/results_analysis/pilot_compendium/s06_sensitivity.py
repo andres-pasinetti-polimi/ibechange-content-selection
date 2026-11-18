@@ -3,7 +3,7 @@ that split the pilot's rating stream.
 
   (a) Event flow. 30.2% of ratings are collected at mission close rather than
       from a push notification. The compendium's decision to pool the two is
-      justified by a TOST bound on the like RATE (within +/-2.89 pp); that bound
+      justified by a TOST bound on the like RATE (macro stFlowMinMargin); that bound
       says nothing about item-level structure, and only 9 items have >=5 ratings
       in both flows, so the question cannot be settled from these data.
   (b) Rating interface. Reworded response options and an explicit no-rating
@@ -19,7 +19,7 @@ import warnings
 import numpy as np
 import pandas as pd
 
-from common import SNAPSHOT, RES_DIR, sigmoid, reg
+from common import SNAPSHOT, RES_DIR, sigmoid, reg, rating_selection_pairs
 
 warnings.filterwarnings("ignore", message=".*encountered in matmul")
 BOOT = 5000
@@ -33,11 +33,11 @@ src["cands"] = sm.apply(lambda d: list(dict.fromkeys(c["rec_id"] for c in d.get(
 src["p_by_item"] = sm.apply(lambda d: d.get("mc_propensity", {}).get("p_by_item", {}))
 src["rec"] = src["selected_rec_ids"].str.strip("{}")
 
-fa = pd.read_csv(SNAPSHOT / "feature_audit.csv")
-fa["prompted"] = fa["prompted"].astype(str).str.lower().isin(["t", "true", "1"])
-fa["rts"] = pd.to_datetime(fa["rating_ts"], format="ISO8601", utc=True)
-J = src.merge(fa[["user_id", "slot_idx", "rec_id", "reward", "prompted", "rts"]]
-              .rename(columns={"rec_id": "rec"}), on=["user_id", "slot_idx", "rec"], how="inner")
+# Each rating is paired with its own selection (common.rating_selection_pairs,
+# 17 Nov 2026); the earlier join on (user, slot_idx, rec) paired ratings with
+# selections of other plans.
+_pairs = rating_selection_pairs()[["id", "reward", "rating_time", "prompted"]].rename(columns={"rating_time": "rts"})
+J = src.merge(_pairs, on="id", how="inner")
 J["K"] = J["cands"].apply(len)
 J = J[(J.K >= 2) & (J.p_log > 0)].sort_values("rts").reset_index(drop=True)
 J["r"] = (J.reward > 0).astype(float)

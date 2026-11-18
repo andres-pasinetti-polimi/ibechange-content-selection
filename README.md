@@ -1,6 +1,6 @@
 # iBeChange content selection
 
-This repository holds the code of the content selection (CS) module developed by Politecnico di Milano (POLIMI) in Task 4.5 of the iBeChange project (Horizon Europe, grant agreement No 101136840). It is the code of deliverable D4.6, Reinforcement Learning Approach, and implements the techniques described in deliverable D4.5, Reinforcement Learning Model. The release that accompanies D4.6 is the tag `d4.6-v1.0`.
+This repository holds the code of the content selection (CS) module developed by Politecnico di Milano (POLIMI) in Task 4.5 of the iBeChange project (Horizon Europe, grant agreement No 101136840). It is the code of deliverable D4.6, Reinforcement Learning Approach, and implements the techniques described in deliverable D4.5, Reinforcement Learning Model. The release that accompanies version 0.2 of D4.6 is the tag `d4.6-v0.2`. The earlier tag `d4.6-v1.0` (11 November 2026) is superseded: its off-policy scripts joined the selection log and the log of the model updates on participant, slot index and recommendation, without the plan, which paired some ratings with selections of other plans.
 
 The code covers the two phases of the project in which the CS module learns from the data of the participants:
 
@@ -14,7 +14,7 @@ The code covers the two phases of the project in which the CS module learns from
 | `pilot/system/cs_module/` | CS module of the pilot study: REST API (`cs_api.py`), selection of the content (`content_selection/`), Thompson sampling policies (`multi_armed_bandit/`), storage and updates (`utils/`) |
 | `pilot/system/airflow/` | Airflow DAGs that ran the CS module in the integration and production environments of the platform (`cs_orchestrator_int.py`, `cs_orchestrator_prod.py`) |
 | `pilot/system/` (other folders) | Test environment of the pilot: virtual users (`virtual_user/`), a time service (`time_service/`), a stand-in for the opportune moment identification module (`omi_module/`), the orchestrator of simulated studies (`orchestrator/`) and the module variant used in it (`cs_module_test/`) |
-| `pilot/results_analysis/pilot_compendium/` | Off-policy evaluation of the pilot logs used in D4.5 (`s05_offpolicy.py`, `s05c_offpolicy_absolute.py`, `s05d_offpolicy_rated_selection.py`, `s06_sensitivity.py`, shared loaders in `common.py`) |
+| `pilot/results_analysis/pilot_compendium/` | Off-policy evaluation of the pilot logs used in D4.5 (`s05_offpolicy.py`, `s05c_offpolicy_absolute.py`, `s05d_offpolicy_rated_selection.py`, `s06_sensitivity.py`), check of the pairing of ratings and selections (`a31_pairing_check.py`), exploratory analyses (`s07_offpolicy_exploratory.py`), weights of the estimates, plan value and records of the timing networks (`a32_review_quantities.py`); shared loaders and the pairing of each rating with its selection (`rating_selection_pairs`) in `common.py` |
 | `rct/system/cs_rct/` | CS service of the RCT: message consumer, REST API, hourly cycle, decision rule, model, replay and report |
 | `rct/system/scripts/` | Cronicle jobs (`cronicle/`), scripts that build the catalogue from the clinical workbooks (`build_*.py`), deployment check (`server_check.py`) and simulation study (`run_simulation_study.py`) |
 | `rct/system/tests/` | Unit tests of the RCT service |

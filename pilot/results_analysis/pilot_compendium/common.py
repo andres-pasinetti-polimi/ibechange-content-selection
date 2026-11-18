@@ -747,3 +747,159 @@ def wilson_ci(k, n, z=1.96):
     c = (p + z**2 / (2 * n)) / den
     h = z * np.sqrt(p * (1 - p) / n + z**2 / (4 * n**2)) / den
     return (c - h, c + h)
+
+
+# ----------------------------------------------------------------------------
+# Selection <-> rating pairing (17 Nov 2026)
+# ----------------------------------------------------------------------------
+# Until 17 November 2026 the off-policy scripts (s05, s05c, s05d, s06) and a20
+# joined the selection log (intervention_mab_samples) and the update log
+# (feature_audit) on (user_id, slot_idx, rec). That key does not identify a
+# selection: slot_idx restarts in every plan, and in feature_audit it is the
+# index in the sequence of the items SENT in the Mission, not the position in
+# the plan. On the analysis snapshot the old join gave 844 rows from 537
+# ratings and 687 selections, 173 ratings joined to more than one selection and
+# 228 rows in which the rating precedes the selection it was joined to.
+#
+# The rule used from now on:
+#   1. plan: feature_audit.sel_ts (selection time of the Mission of the rating)
+#      equals selected_contents.mission_start_time of exactly one plan of the
+#      same participant;
+#   2. copy: the rating carries the process_id of a dispatched notification;
+#      that notification is matched to a scheduled copy of the item in the same
+#      plan (same content, delivery time within 30 minutes, as in delivery()),
+#      and the rating is matched to the k-th selection of the item in the plan,
+#      with k the rank of that scheduled copy among the scheduled copies of the
+#      item by delivery time. When the chain is not available, k is the number
+#      of deliveries of the item earlier in the Mission (planned_so_far) + 1,
+#      or, for a rating in the review, the number of deliveries of the item;
+#   3. checks: every selection is used at most once and no rating precedes its
+#      selection (asserted).
+# The rule assumes that the scheduled copies of one item follow the plan order
+# of that item. The fallback of step 2 was the first version of the rule; it
+# assigns the wrong copy when an earlier copy was scheduled and not dispatched
+# (a31_pairing_check.py counts these cases).
+
+
+def selection_log(snapshot_dir: Path | None = None) -> pd.DataFrame:
+    """Selection log of the pre-migration snapshot, one row per selected
+    recommendation, with its plan, position and occurrence of the item."""
+    d = BASELINE if snapshot_dir is None else snapshot_dir
+    src = pd.read_csv(d / "intervention_mab_samples.csv")
+    src["rec"] = src["selected_rec_ids"].str.strip("{}")
+    src["sel_time"] = pd.to_datetime(src["created_at"], format="ISO8601", utc=True)
+    src = src.sort_values(["plan_id", "slot_idx"]).reset_index(drop=True)
+    src["copy"] = src.groupby(["plan_id", "rec"]).cumcount() + 1
+    return src
+
+
+def _plan_of_mission_start() -> pd.DataFrame:
+    sc = (pd.concat([pd.read_csv(BASELINE / "selected_contents.csv"),
+                     pd.read_csv(SNAPSHOT / "selected_contents.csv")])
+          .drop_duplicates("plan_id"))
+    sc["mission_start"] = pd.to_datetime(sc["mission_start_time"], format="ISO8601", utc=True)
+    key = sc[["plan_id", "user_id", "mission_start"]]
+    assert not key.duplicated(["user_id", "mission_start"]).any(), "two plans share a Mission start"
+    return key
+
+
+def rating_selection_pairs(fa: pd.DataFrame | None = None, src: pd.DataFrame | None = None, debug: bool = False) -> pd.DataFrame:
+    """One row per rating of feature_audit matched to its selection.
+
+    Returns the columns of the selection log (prefixed by nothing) plus the
+    rating columns `reward`, `rating_time`, `prompted`, `fa_row`, `k`. Ratings
+    whose plan is not in the selection log, or without a k-th copy, are
+    dropped; the counts are in the attribute `pairing_counts`."""
+    fa = pd.read_csv(SNAPSHOT / "feature_audit.csv") if fa is None else fa.copy()
+    src = selection_log() if src is None else src
+    fa["sel_ts_"] = pd.to_datetime(fa["sel_ts"], format="ISO8601", utc=True)
+    fa["rating_time"] = pd.to_datetime(fa["rating_ts"], format="ISO8601", utc=True)
+    fa["prompted"] = fa["prompted"].astype(str).str.lower().isin(["t", "true", "1"])
+    rec_col = "rec_id" if "rec_id" in fa.columns else "rec"
+    prior = fa["planned_so_far"].apply(lambda x: [d["id"] for d in json.loads(x)])
+    earlier = [p.count(r) for p, r in zip(prior, fa[rec_col])]
+    fa["k_delivered"] = [max(e, 1) if pr else e + 1 for e, pr in zip(earlier, fa["prompted"])]
+    fa["fa_row"] = fa["id"]
+    key = _plan_of_mission_start()
+    fa = fa.merge(key, left_on=["user_id", "sel_ts_"], right_on=["user_id", "mission_start"], how="left")
+    # step 2 through the dispatched notification of the rating
+    fb = feedback()
+    sent = (fb[(fb["event_name"] == "notification_sent") & (fb["process_id"].astype(str) != "0")]
+            [["process_id", "ts"]].drop_duplicates("process_id"))
+    sent_ts = dict(zip(sent["process_id"].astype(str), sent["ts"]))
+    dl = delivery()
+    dl = dl[dl["plan_id"].isin(set(fa["plan_id"].dropna()))].sort_values(["plan_id", "sched"]).copy()
+    dl["sched_copy"] = dl.groupby(["plan_id", "content_id"]).cumcount() + 1
+    copies = {k_: g for k_, g in dl.groupby(["plan_id", "content_id"])}
+
+    used = set()
+
+    def chain_k(pid, rec, proc):
+        # one-to-one, as in delivery(): the nearest scheduled copy within 30
+        # minutes that no earlier dispatch of the same item has taken
+        t = sent_ts.get(str(proc))
+        g = copies.get((pid, rec))
+        if t is None or g is None:
+            return None
+        gap = (g["sched"] - t).abs().sort_values()
+        for idx, dt in gap.items():
+            if dt > pd.Timedelta("30min"):
+                break
+            if idx not in used:
+                used.add(idx)
+                return int(g.loc[idx, "sched_copy"])
+        return None
+
+    fa["_sent"] = fa["process_id"].astype(str).map(sent_ts)
+    order = fa.sort_values("_sent").index
+    kc = {i: chain_k(fa.at[i, "plan_id"], fa.at[i, rec_col], fa.at[i, "process_id"]) for i in order}
+    fa["k_chain"] = pd.Series(kc)
+    # fallback only when the rating has no dispatched notification; a rating
+    # whose notification matches no free scheduled copy (a dispatch without a
+    # scheduled notification) is not paired
+    no_sent = fa["_sent"].isna()
+    fa["k"] = fa["k_chain"].where(~no_sent, fa["k_delivered"])
+    n_unpaired_dispatch = int((~no_sent & fa["k_chain"].isna() & fa["plan_id"].notna()).sum())
+    n_total, n_with_plan = len(fa), int(fa["plan_id"].notna().sum())
+    fa = fa[fa["k"].notna()].copy()
+    fa["k"] = fa["k"].astype(int)
+    n_all, n_plan = len(fa), int(fa["plan_id"].notna().sum())
+    fa = fa[fa["plan_id"].isin(set(src["plan_id"]))]
+    n_log = len(fa)
+    keep = ["plan_id", rec_col, "k", "k_chain", "k_delivered", "reward", "rating_time", "prompted", "fa_row"]
+    extra = [c for c in ("fv", "mission_id", "process_id", "slot_idx") if c in fa.columns]
+    rat = fa[keep + extra].rename(columns={rec_col: "rec", "slot_idx": "fa_slot_idx"})
+    out = src.merge(rat, left_on=["plan_id", "rec", "copy"], right_on=["plan_id", "rec", "k"], how="inner")
+    if debug:
+        return out
+    assert not out["id"].duplicated().any(), "a selection is matched to two ratings"
+    assert not out["fa_row"].duplicated().any(), "a rating is matched to two selections"
+    assert (out["rating_time"] >= out["sel_time"]).all(), "a rating precedes its selection"
+    out.attrs["pairing_counts"] = dict(ratings=n_total, with_plan=n_with_plan, plan_in_log=n_log,
+                                       dispatch_without_copy=n_unpaired_dispatch, matched=len(out))
+    return out.reset_index(drop=True)
+
+
+# ----------------------------------------------------------------------------
+# Dispatched notifications (moved from a30_omi_crosscheck.py on 18 Nov 2026)
+# ----------------------------------------------------------------------------
+# w_min is the response window of the reward of the timing module, in minutes.
+
+def dispatched_notifications(w_min: float = 60.0) -> pd.DataFrame:
+    """One row per dispatched notification, with its push-flow opening and rating."""
+    fb = feedback()
+    sent = (fb[fb.event_name == "notification_sent"]
+            [["process_id", "user_id", "ts"]].rename(columns={"ts": "sent"}))
+    push = fb[~fb.eom]
+    opened = (push[push.event_name == "notification_opened"]
+              .groupby("process_id").ts.min().rename("opened"))
+    rated = (push[push.event_name == "notification_rated"]
+             .sort_values("ts").drop_duplicates("process_id")
+             .set_index("process_id")[["ts", "rating"]].rename(columns={"ts": "rated"}))
+    s = sent.join(opened, on="process_id").join(rated, on="process_id")
+    s["delay"] = (s.opened - s.sent).dt.total_seconds() / 60
+    s["rate_delay"] = (s.rated - s.sent).dt.total_seconds() / 60
+    s["open_w"] = s.delay < w_min
+    s["rated_w"] = s.open_w & (s.rate_delay < w_min)
+    s["hour"] = s.sent.dt.hour
+    return s.sort_values(["user_id", "sent"]).reset_index(drop=True)
