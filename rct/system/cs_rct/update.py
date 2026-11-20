@@ -38,6 +38,12 @@ def centred_counts_by_day(decision_rows):
     return centred
 
 
+def moderators(row):
+    """{name: value} of the moderators logged in the row's state."""
+    state = row.get("state") or {}
+    return {name: state.get(name) for name in composition.MODERATOR_NAMES}
+
+
 def lag_sums(centred, user_uuid, day, lag_days=None):
     lag_days = lag_days or design.LAG_DAYS
     total = [0.0, 0.0]
@@ -48,12 +54,15 @@ def lag_sums(centred, user_uuid, day, lag_days=None):
     return total
 
 
-def training_points(decision_rows, participants, now, study=None, lag_rows=None, baseline=None):
+def training_points(decision_rows, participants, now, study=None, lag_rows=None, baseline=None, term_names=None):
     """(decision points, ids of the episodes they come from), sorted for reproducibility.
 
     lag_rows: the rows the lag terms are read from, all decision rows by default (the replay passes
     every row while it restricts decision_rows to the episodes of one version). baseline: the names
-    of psi, features.baseline_names(study) by default (the replay passes those of the version)."""
+    of psi, features.baseline_names(study) by default (the replay passes those of the version).
+    term_names: the treatment terms, composition.TERM_NAMES by default (the replay passes those of
+    the version). The moderators are read from the logged state; a row written before they existed
+    has none, and its moderated terms are 0."""
     baseline = baseline or features.baseline_names(study)
     centred = centred_counts_by_day(decision_rows if lag_rows is None else lag_rows)
     by_episode = {}
@@ -85,7 +94,8 @@ def training_points(decision_rows, participants, now, study=None, lag_rows=None,
             points.append(model.DecisionPoint(
                 user_uuid=user_uuid,
                 psi=[row["baseline"][name] for name in baseline],
-                terms=composition.centred_terms(chosen, row["composition_probabilities"]).tolist(),
+                terms=composition.centred_terms(chosen, row["composition_probabilities"],
+                                                moderators(row), term_names).tolist(),
                 lags=lag_sums(centred, user_uuid, row["decision_day"], row["parameters"].get("lag_days")),
                 outcome=outcomes[row["decision_day"]],
             ))

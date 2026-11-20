@@ -170,7 +170,7 @@ def episode_marks(participant, episode, now, entered_by=None):
     for mark in participant.marks:
         if mark["mission_process_id"] != episode["mission_process_id"] or not known(mark, now):
             continue
-        if mark["reference_time"] is None:
+        if mark_day(mark) is None:
             continue
         if entered_by is not None and mark["entered_at"] is not None and mark["entered_at"] > entered_by:
             continue
@@ -180,7 +180,15 @@ def episode_marks(participant, episode, now, entered_by=None):
 
 def marked_days(participant, episode, now, entered_by=None):
     """The reference days of the episode's marks, as a set of dates."""
-    return {mark["reference_time"].date() for mark in episode_marks(participant, episode, now, entered_by)}
+    return {mark_day(mark) for mark in episode_marks(participant, episode, now, entered_by)}
+
+
+def mark_day(mark):
+    """The local day a mark refers to: the date EUT sends in `finished_at` (from 17 November 2026),
+    or the local date of the moment sent before that change; None if the message carries neither."""
+    if mark.get("reference_day") is not None:
+        return mark["reference_day"]
+    return mark["reference_time"].date() if mark.get("reference_time") is not None else None
 
 
 def daily_outcomes(participant, episode, days, now, decided_at=None):
@@ -222,7 +230,7 @@ def backfilled_days(participant, episode, now, end, decided_at=None):
     days = set()
     for mark in episode_marks(participant, episode, now, entered_by=end):
         entered = mark["entered_at"]
-        if entered is None or entered.date() != mark["reference_time"].date() + timedelta(days=1):
+        if entered is None or entered.date() != mark_day(mark) + timedelta(days=1):
             continue
         cut = decided_at.get(entered.date())
         if cut is None or entered > cut:
@@ -240,11 +248,9 @@ def scheduled_slot(participant, episode, day, now):
     return max(slots, key=lambda row: (row["entered_at"] or datetime.min))["start_at"]
 
 
-def earlier_marked_share(participant, before_episode, now):
-    """The participant's share of marked days over earlier non-withdrawn episodes finished by `now`.
-
-    Returns None if there is none. Each episode counts W days.
-    """
+def earlier_marked_counts(participant, before_episode, now):
+    """(marked days, days) over the participant's earlier non-withdrawn episodes finished by `now`.
+    Each episode counts W days."""
     marked, days = 0, 0
     for episode in participant.episodes:
         if episode is before_episode or episode["selected_at"] >= before_episode["selected_at"]:
@@ -255,7 +261,50 @@ def earlier_marked_share(participant, before_episode, now):
         window = {start_day(episode) + timedelta(days=offset) for offset in range(design.WINDOW_DAYS)}
         marked += len(marked_days(participant, episode, now, entered_by=end) & window)
         days += design.WINDOW_DAYS
+    return marked, days
+
+
+def earlier_marked_share(participant, before_episode, now):
+    """The participant's share of marked days over earlier non-withdrawn episodes finished by `now`.
+
+    Returns None if there is none. Each episode counts W days.
+    """
+    marked, days = earlier_marked_counts(participant, before_episode, now)
     return marked / days if days else None
+
+
+def marked_day_counts(participant, episode, day, now):
+    """(marked days, days) of the participant before `day`: the earlier episodes as in
+    earlier_marked_share (W days each, open and withdrawn ones left out) and the days of `episode`
+    before `day`, with the marks received by `now`."""
+    earlier_marked, earlier_days = earlier_marked_counts(participant, episode, now)
+    t0 = start_day(episode)
+    current = {d for d in marked_days(participant, episode, now) if t0 <= d < day}
+    return earlier_marked + len(current), earlier_days + max((day - t0).days, 0)
+
+
+def opened_counts(participant, previous, day, now):
+    """(opened, delivered): the recommendations and resources the service handed out to the
+    participant before `day` (previous, the delivery rows of store.py, less those withdrawn before
+    they were sent), and how many of them have a notification_opened event received by `now`. An
+    opening of a content id counts for its latest delivery made on the day of the opening or
+    before it."""
+    handed = sorted((d for d in previous
+                     if d.get("format") in ("recommendation", "resource") and d.get("content_id") is not None
+                     and not d.get("cancelled") and d["decision_day"] < day),
+                    key=lambda d: d["decision_day"])
+    openings = {}
+    for row in participant.notifications:
+        if row["action"] == "opened" and row.get("created_at") is not None and known(row, now):
+            openings.setdefault(row["content_id"], []).append(row["created_at"].date())
+    opened = 0
+    for i, delivery in enumerate(handed):
+        later = [d["decision_day"] for d in handed[i + 1:] if d["content_id"] == delivery["content_id"]]
+        until = later[0] if later else None
+        if any(delivery["decision_day"] <= when and (until is None or when < until)
+               for when in openings.get(delivery["content_id"], [])):
+            opened += 1
+    return opened, len(handed)
 
 
 def latest_health_score(participant, pillar_id, now):

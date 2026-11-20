@@ -1,10 +1,10 @@
 """The state s and the baseline features psi of one decision.
 
 Table "Feature blocks" of rct/paper/main.tex. The state has eight entries in the usability
-study and is extended by the Mission's class and frequency in the trial. Since the composition
-design (implementation_plan_composition_2026-11-04.md, Phase 2) s no longer multiplies the
-treatment terms of the model: it is logged with each decision (column state) for the analyses and
-for moderators still to be decided. The count of the service's deliveries in the three preceding
+study, is extended by the Mission's class and frequency in the trial, and ends with the two
+participant moderators. Since the composition design (implementation_plan_composition_2026-11-04.md,
+Phase 2) only the moderators multiply the treatment terms of the model; the other entries are
+logged with each decision (column state) for the analyses. The count of the service's deliveries in the three preceding
 days is kept in the context and not in s or psi, because the lag terms of the model replace it. The
 baseline takes s without its intercept and without the four entries built from the marks
 (MARK_NAMES), the share of days the Mission implies, the class and frequency indicators, the
@@ -21,6 +21,11 @@ them, so in the row of day t they are outcomes of the compositions that enter th
 conditioning on them biases the lag coefficients. They stay in s. The versions fitted before that
 date used the baseline with them (baseline_names(with_marks=True)).
 
+The participant moderators (composition.MODERATOR_NAMES, decided 20 November 2026) are the last
+entries of s and multiply R and Q in the model (moderators below). They are left out of the
+baseline for the same reason as MARK_NAMES: they are built from the participant's openings and
+marks, which the compositions of earlier days can change.
+
 Every entry is computed from what the service had received at the decision.
 Numeric entries are scaled to be of order one, since the prior on theta has the
 same scale tau on every coefficient.
@@ -30,8 +35,9 @@ from datetime import timedelta
 
 from cs_rct import design
 from cs_rct.catalogue import DAILY, NO_COUNT
-from cs_rct.history import (earlier_marked_share, latest_health_score, marked_days, scheduled_slot,
-                            sent_count, start_day)
+from cs_rct.composition import MODERATOR_NAMES
+from cs_rct.history import (earlier_marked_share, latest_health_score, marked_day_counts, marked_days,
+                            opened_counts, scheduled_slot, sent_count, start_day)
 
 USABILITY_NAMES = [
     "intercept",
@@ -50,13 +56,14 @@ MARK_NAMES = ["deficit", "marked_yesterday", "episode_marked_share", "participan
 
 def state_names(study=None):
     study = study or design.STUDY
-    return USABILITY_NAMES + TRIAL_NAMES if study == "trial" else list(USABILITY_NAMES)
+    return (USABILITY_NAMES + TRIAL_NAMES if study == "trial" else list(USABILITY_NAMES)) + MODERATOR_NAMES
 
 
 def baseline_names(study=None, with_marks=False):
     """The names of psi; with_marks=True gives the baseline of the versions fitted before
-    11 November 2026, which also had MARK_NAMES."""
-    state = [name for name in state_names(study)[1:] if with_marks or name not in MARK_NAMES]
+    11 November 2026, which also had MARK_NAMES. The moderators are never in it."""
+    state = [name for name in state_names(study)[1:]
+             if name not in MODERATOR_NAMES and (with_marks or name not in MARK_NAMES)]
     return (["intercept"] + state + [name for name in TRIAL_NAMES if name not in state]
             + ["expected_share"] + PILLAR_NAMES + SOCIODEMOGRAPHIC_NAMES + ["hhs_pillar", "hhs_missing"])
 
@@ -80,6 +87,26 @@ HHS_SCALE = 100
 # Scales of the counts.
 RECENT_DAYS = 3
 PROGRAMME_SCALE = 84
+
+
+def shrunk(count, total, centre):
+    """(count + a centre) / (total + a) - centre, with a = design.MODERATOR_PSEUDO_COUNT."""
+    a = design.MODERATOR_PSEUDO_COUNT
+    return (count + a * centre) / (total + a) - centre
+
+
+def moderators(participant, episode, day, now, previous):
+    """({name: value} of the moderators, {name: (count, total)}), from what the service had
+    received by `now`.
+
+    recommendations_opened_share: the recommendations and resources handed out before today that
+    the participant opened (history.opened_counts). days_marked_share: the days before today with a
+    mark, over earlier episodes and the days of this one (history.marked_day_counts). Each share is
+    shrunk towards design.MODERATOR_CENTRE and centred on it (shrunk)."""
+    counts = {"recommendations_opened_share": opened_counts(participant, previous, day, now),
+              "days_marked_share": marked_day_counts(participant, episode, day, now)}
+    return ({name: shrunk(*counts[name], design.MODERATOR_CENTRE[name]) for name in MODERATOR_NAMES},
+            counts)
 
 
 def compute(participant, episode, mission, day, now, study=None, previous=()):
@@ -119,8 +146,10 @@ def compute(participant, episode, mission, day, now, study=None, previous=()):
     enrolment = participant.enrolment_date or t0
     hhs = latest_health_score(participant, PILLAR_ID.get(mission.pillar), now) if mission is not None else None
     programme_day = (day - enrolment).days
+    moderator_values, moderator_counts = moderators(participant, episode, day, now, previous)
 
     values = {
+        **moderator_values,
         "intercept": 1.0,
         "deficit": deficit,
         "scheduled_today": float(slot is not None),
@@ -165,5 +194,7 @@ def compute(participant, episode, mission, day, now, study=None, previous=()):
         "age": participant.age,
         "recruitment_center": participant.recruitment_center,
         "hhs_pillar": hhs,
+        # (count, total) behind each moderator.
+        "moderator_counts": {name: list(value) for name, value in moderator_counts.items()},
     }
     return s, psi, context

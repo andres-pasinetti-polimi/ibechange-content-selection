@@ -8,13 +8,14 @@ outcome r on
 
 where x = (R, Q) is the composition of the day, g(x) its seven treatment terms
 (composition.TERM_NAMES: the increments of the first and second recommendation, of the first to
-fourth reminder, and R x Q), E_p[g] their expectation under the probabilities of the day, so that
+fourth reminder, R x Q, and R and Q times each participant moderator), E_p[g] their expectation under the probabilities of the day, so that
 each term is centred (action-centred least squares), and the lag sums are the sums over the
 design.LAG_DAYS preceding days of R - E[R] and of Q - E[Q], each centred under the probabilities of
 its own day. alpha_i is a per-participant level, integrated out block by block, so the cost grows
-linearly with the number of participants. No moderator multiplies the treatment terms and there is
-no per-participant random effect on them (design record, Section 1.2; moderators are open, Section 2
-of the plan). The noise variance and the variance of alpha_i are fixed.
+linearly with the number of participants. Since 20 November 2026 two participant moderators
+(composition.MODERATOR_NAMES, features.moderators) multiply R and Q with coefficients common to all
+participants; there is no per-participant random effect on the treatment terms (design record,
+Section 1.2). The noise variance and the variance of alpha_i are fixed.
 
 beta estimates the effect of one recommendation and of one reminder sent today on the mark of one
 later day, so that a burden of extra notifications on the following days is estimated from the
@@ -64,32 +65,36 @@ class Posterior:
         return cls(**data)
 
 
-def prior():
+def prior(names=None):
     """The posterior before any data: every coefficient N(0, tau^2)."""
-    d = len(NAMES)
-    return Posterior(names=list(NAMES), mean=[0.0] * d, cov=(np.eye(d) * design.PRIOR_SCALE_TAU ** 2).tolist())
+    names = names or NAMES
+    d = len(names)
+    return Posterior(names=list(names), mean=[0.0] * d, cov=(np.eye(d) * design.PRIOR_SCALE_TAU ** 2).tolist())
 
 
-def fit(points, baseline=None):
+def fit(points, baseline=None, names=None):
     """The posterior given the decision points of all finished episodes included in the update.
+
+    names: the treatment and lag terms, in the order of the points' terms and lags (NAMES by default;
+    the replay passes those of the version it refits).
 
     The floating-point warnings of numpy are silenced because the BLAS of macOS raises them on
     finite inputs; the result is checked for finiteness instead."""
     if not points:
-        return prior()
+        return prior(names)
     with np.errstate(divide="ignore", over="ignore", invalid="ignore"):
-        posterior = solve(points)
+        posterior = solve(points, names or NAMES)
     posterior.baseline = list(baseline) if baseline is not None else None
     if not (np.isfinite(posterior.mean).all() and np.isfinite(posterior.cov).all()):
         raise ValueError("the posterior is not finite")
     return posterior
 
 
-def solve(points):
+def solve(points, names):
     """Fixed coefficients f = (alpha_0, theta, beta); the participant level alpha_i is eliminated by
     its Schur complement."""
     noise = design.NOISE_VARIANCE
-    d = len(NAMES)
+    d = len(names)
     p = len(points[0].psi)
     effects = slice(p, p + d)
     prior_precision = np.zeros(p + d)
@@ -115,5 +120,5 @@ def solve(points):
     cov_f = np.linalg.inv(S)
     cov_f = (cov_f + cov_f.T) / 2
     mean_f = cov_f @ h
-    return Posterior(names=list(NAMES), mean=mean_f[effects].tolist(), cov=cov_f[effects, effects].tolist(),
+    return Posterior(names=list(names), mean=mean_f[effects].tolist(), cov=cov_f[effects, effects].tolist(),
                      decision_points=len(points), participants=len(by_user))

@@ -1,5 +1,6 @@
-"""Build catalogue/recommendations_workbook.json from the ICO recommendations workbook (version 2,
-28 October 2026), in the format of POST /recommendations ({content_id: {"missions": [...], ...}}).
+"""Build catalogue/recommendations_workbook.json from the ICO recommendations workbook (version 2 of
+28 October 2026, as updated by ICO and downloaded on 18 November 2026: new texts for NRc9 and NRc13 and
+the new codes NRc94 to NRc97), in the format of POST /recommendations ({content_id: {"missions": [...], ...}}).
 
 The file stands in for GET /internal/recommendations while that endpoint does not serve the RCT
 recommendations (it returned HTTP 422 on 3 November 2026 and 401 on 4 November 2026). Once VU serves
@@ -16,6 +17,8 @@ Rules, as in scripts/build_resource_catalogue.py:
 - rows with a text and no code are not in the catalogue and are reported: in version 2, 21 rows of
   Physical activity below the table (rows 433-448, and the variations b to d of rows 459-461 and
   465-467), with no code, title or Mission;
+- a CACTIS code that the workbook stores as a number with a decimal part of zero (121.0 in the update
+  of 18 November 2026) is written as an integer (121), as in the first version of the file;
 - a content id written twice is kept once, and the script reports whether the two rows differ: in
   version 2, PRc21a and PRc22a are written again below the table (rows 458 and 464, with no title or
   Mission and with other texts), and the first rows are kept.
@@ -33,9 +36,14 @@ import openpyxl
 from scripts.build_resource_catalogue import PILLAR_OF_SHEET, expand
 
 SYSTEM_FOLDER = Path(__file__).parent.parent
-WORKBOOK = SYSTEM_FOLDER.parent / "intervention_structure" / "RCT_Recommendations_v2_28Oct2026.xlsx"
+WORKBOOK = SYSTEM_FOLDER.parent / "intervention_structure" / "RCT_Recommendations_v2_updated_18Nov2026.xlsx"
 MISSIONS = SYSTEM_FOLDER / "catalogue" / "missions.csv"
 OUTPUT = SYSTEM_FOLDER / "catalogue" / "recommendations_workbook.json"
+
+
+def as_integer(value):
+    """121.0 -> 121; any other value (121, "121, 221", None) unchanged."""
+    return int(value) if isinstance(value, float) and value.is_integer() else value
 
 
 def build():
@@ -57,6 +65,7 @@ def build():
                           "Cactis_Code"]
         first_row_of = {}  # code -> the values of shared_columns on its first row
         for row in rows[1:]:
+            row = list(row) + [None] * (len(header) - len(row))  # the reader drops empty trailing cells
             code, text = row[column["Code"]], row[column["Recommendation"]]
             if not text or not str(text).strip():
                 continue
@@ -87,7 +96,7 @@ def build():
                 "text": str(text).strip(),
                 "com_b": row[column["COM-B Subdomain"]],
                 "target": row[column["Target_BC_factor"]],
-                "cactis_code": row[column["Cactis_Code"]],
+                "cactis_code": as_integer(row[column["Cactis_Code"]]),
             }
             if content_id in recommendations:
                 same = recommendations[content_id] == item

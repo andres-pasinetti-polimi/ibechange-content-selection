@@ -67,3 +67,15 @@ def test_the_episode_is_open_from_the_local_selection_time():
 def test_api_times_carry_the_participants_offset():
     assert with_offset(datetime(2027, 1, 5, 18, 0), "Europe/Bucharest") == "2027-01-05T18:00:00+02:00"
     assert from_utc(datetime(2027, 7, 5, 16, 0), "Europe/Madrid") == "2027-07-05T18:00:00+02:00"
+
+
+def test_a_mark_sent_as_a_date_is_that_local_day_without_conversion():
+    # From 17 November 2026 EUT sends finished_at as the day the mark refers to. 5 January stays
+    # 5 January whatever the offset of the participant's zone.
+    participant_tables = tables("UMFCD", datetime(2027, 1, 4, 8, 0))
+    participant_tables["marks"] = [{"user_uuid": "u1", "mission_process_id": 1, "mission_id": "PM3", "step": None,
+                                    "total_steps": None, "reference_day": date(2027, 1, 5), "reference_time": None,
+                                    "entered_at": datetime(2027, 1, 6, 9, 0), "process_id": None,
+                                    "received_at": datetime(2027, 1, 6, 9, 0)}]
+    participant = build_participants(participant_tables)["u1"]
+    assert marked_days(participant, participant.episodes[0], datetime(2027, 1, 7)) == {date(2027, 1, 5)}

@@ -354,3 +354,34 @@ def test_the_order_of_the_day_is_drawn_uniformly_and_logged(monkeypatch):
         orders.add(tuple(d["format"] for d in deliveries))
     # Recommendations and reminders are interleaved in more than one way.
     assert len(orders) > 1
+
+
+def test_the_moderators_are_built_from_openings_and_marks_and_left_out_of_the_baseline():
+    """Two recommendations handed out on day 1, one opened (and an opening of a content never
+    handed out, which does not count); day 1 marked. Each share is shrunk towards its centre with
+    design.MODERATOR_PSEUDO_COUNT and centred."""
+    from tests.helpers import notification
+    day1 = START.date()
+    opened_at = datetime.combine(day1, datetime.min.time()) + timedelta(hours=12)
+    person = participant([episode(mission_id="PM3")],
+                         marks=[mark(opened_at, opened_at)],
+                         notifications=[notification("opened", opened_at, content_id="R-PM3-0"),
+                                        notification("opened", opened_at, content_id="R-other")])
+    previous = [{"decision_day": day1, "format": "recommendation", "content_id": "R-PM3-0", "position": 0},
+                {"decision_day": day1, "format": "recommendation", "content_id": "R-PM3-1", "position": 1}]
+    row, _ = run(person, previous=previous)
+    a = design.MODERATOR_PSEUDO_COUNT
+    centre = design.MODERATOR_CENTRE
+    assert row["context"]["moderator_counts"] == {"recommendations_opened_share": [1, 2],
+                                                  "days_marked_share": [1, 1]}
+    assert row["state"]["recommendations_opened_share"] == pytest.approx(
+        (1 + a * centre["recommendations_opened_share"]) / (2 + a) - centre["recommendations_opened_share"])
+    assert row["state"]["days_marked_share"] == pytest.approx(
+        (1 + a * centre["days_marked_share"]) / (1 + a) - centre["days_marked_share"])
+    assert not set(composition.MODERATOR_NAMES) & set(row["baseline"])
+
+
+def test_a_participant_without_history_is_at_the_centre():
+    row, _ = run(participant([episode(mission_id="PM3")]), day=START.date(),
+                 now=datetime.combine(START.date(), datetime.min.time()) + timedelta(hours=9))
+    assert all(row["state"][name] == pytest.approx(0.0) for name in composition.MODERATOR_NAMES)

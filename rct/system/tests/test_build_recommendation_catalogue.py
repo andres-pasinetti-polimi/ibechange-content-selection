@@ -1,4 +1,4 @@
-"""catalogue/recommendations_workbook.json, built from the ICO workbook of 28 October 2026."""
+"""catalogue/recommendations_workbook.json, built from the ICO workbook of 28 October 2026 as updated on 18 November 2026."""
 
 import json
 
@@ -13,7 +13,7 @@ from scripts.build_recommendation_catalogue import OUTPUT, WORKBOOK
 def test_the_committed_catalogue_matches_the_workbook_rules():
     items = json.loads(OUTPUT.read_text())
     missions = catalogue.load().missions
-    assert len(items) == 2142
+    assert len(items) == 2158
     # Variations take the Missions of the first row of their code.
     assert items["SRc7b"]["missions"] == items["SRc7a"]["missions"] and items["SRc7b"]["missions"]
     assert items["SRc7e"]["com_b"] == "Psychological Capability"

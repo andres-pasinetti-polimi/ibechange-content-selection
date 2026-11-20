@@ -15,7 +15,7 @@ import csv
 import json
 import logging
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from functools import lru_cache
 
 from cs_rct.catalogue import CATALOGUE_FOLDER, hapa_stage_name, subdomain_names
@@ -120,7 +120,7 @@ def parse_events(messages):
                         "step": to_text(properties.get("step")),
                         "total_steps": to_int(properties.get("total_steps")),
                         # The day the mark refers to, and the moment it was entered.
-                        "reference_time": to_datetime(properties.get("finished_at")),
+                        **reference_of_mark(properties.get("finished_at")),
                         "entered_at": to_datetime(data.get("created_at")),
                         "process_id": to_int(data.get("process_id")),
                         "received_at": received_at,
@@ -330,6 +330,19 @@ def to_datetime(text):
         return None
     moment = datetime.fromisoformat(text)
     return moment.astimezone(timezone.utc).replace(tzinfo=None) if moment.tzinfo is not None else moment
+
+
+def reference_of_mark(finished_at):
+    """The day a calendar mark refers to, from `finished_at` of task_step_done.
+
+    EUT changed `finished_at` (email and architecture document of 17 November 2026) from the time the
+    mark was entered, in UTC, to the day the mark refers to, a date with no time ("2026-07-20"), which is
+    the participant's local day and is not converted. A value with a time, as in the messages before
+    the change, is read as before: a UTC moment whose local date, in history.py, is the day.
+    """
+    if finished_at and "T" not in finished_at:
+        return {"reference_day": date.fromisoformat(finished_at), "reference_time": None}
+    return {"reference_day": None, "reference_time": to_datetime(finished_at)}
 
 
 def to_int(value):

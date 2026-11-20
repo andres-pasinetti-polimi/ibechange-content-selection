@@ -14,8 +14,16 @@ from cs_rct import design
 
 # The treatment terms of the model (Phase 2): the increments of the first and second
 # recommendation, of the first to fourth reminder, and the interaction R x Q.
-TERM_NAMES = ["recommendation_1", "recommendation_2", "reminder_1", "reminder_2", "reminder_3", "reminder_4",
-              "recommendations_x_reminders"]
+BASE_TERM_NAMES = ["recommendation_1", "recommendation_2", "reminder_1", "reminder_2", "reminder_3", "reminder_4",
+                   "recommendations_x_reminders"]
+# The participant moderators (decided 20 November 2026): each multiplies R and Q, with coefficients
+# common to all participants, so that the composition chosen differs between participants through
+# the values of the moderators. Each value is a share of the participant's history, shrunk towards
+# a centre and centred on it (features.moderators), so that the base terms are the effects of a
+# participant at the centre.
+MODERATOR_NAMES = ["recommendations_opened_share", "days_marked_share"]
+MODERATED_NAMES = [f"{m}_x_{count}" for m in MODERATOR_NAMES for count in ("recommendations", "reminders")]
+TERM_NAMES = BASE_TERM_NAMES + MODERATED_NAMES
 # The lag terms: the centred sums of R and of Q over the design.LAG_DAYS preceding days.
 LAG_NAMES = ["lag_recommendations", "lag_reminders"]
 
@@ -67,10 +75,20 @@ def fallback(admissible_set):
     return min(admissible_set, key=lambda c: (c[0] + c[1], abs(c[0] - default[0]) + abs(c[1] - default[1]), c))
 
 
-def terms(composition):
-    """The treatment terms of a composition, before centring."""
+def terms(composition, moderators=None, names=None):
+    """The treatment terms of a composition, before centring, in the order of names (TERM_NAMES by
+    default; a model version fitted before 20 November 2026 has only BASE_TERM_NAMES).
+
+    moderators: {name in MODERATOR_NAMES: value}; a missing moderator counts as 0, the centre."""
     r, q = composition
-    return np.array([float(r >= 1), float(r >= 2)] + [float(q >= k) for k in range(1, 5)] + [float(r * q)])
+    moderators = moderators or {}
+    value = dict(zip(BASE_TERM_NAMES, [float(r >= 1), float(r >= 2)] + [float(q >= k) for k in range(1, 5)]
+                     + [float(r * q)]))
+    for m in MODERATOR_NAMES:
+        x = float(moderators.get(m) or 0.0)
+        value[f"{m}_x_recommendations"] = x * r
+        value[f"{m}_x_reminders"] = x * q
+    return np.array([value[name] for name in (names or TERM_NAMES)])
 
 
 def expected(probabilities, function):
@@ -78,8 +96,12 @@ def expected(probabilities, function):
     return sum(p * np.asarray(function(parse(k)), dtype=float) for k, p in probabilities.items())
 
 
-def centred_terms(composition, probabilities):
-    return terms(composition) - expected(probabilities, terms)
+def centred_terms(composition, probabilities, moderators=None, names=None):
+    """The terms of the composition less their expectation under the day's probabilities. The
+    moderators are fixed before the draw, so a moderated term is the moderator times the centred R
+    or Q."""
+    function = lambda c: terms(c, moderators, names)  # noqa: E731
+    return function(composition) - expected(probabilities, function)
 
 
 def centred_counts(composition, probabilities):
@@ -99,27 +121,33 @@ def starting_probabilities(policy, admissible_set, explore_share, default):
     return {k: explore_share * p + (1 - explore_share) * (k == key(anchor)) for k, p in uniform.items()}
 
 
-def values(posterior, admissible_set, lag_days, rng, draws):
-    """Posterior draws of the value of each admissible composition: its effect on the day plus
-    lag_days times its effect on one later day. Shape (draws, compositions).
+def values(posterior, admissible_set, lag_days, rng, draws, moderators=None):
+    """Posterior draws of the value of each admissible composition for a participant with the given
+    moderators: its effect on the day plus lag_days times its effect on one later day. Shape (draws,
+    compositions). The terms are those the posterior names, so a version fitted without moderated
+    terms gives the values it gave when it was used.
 
     The floating-point warnings of numpy are silenced because the BLAS of macOS raises them on
     finite inputs (as in model.fit); the result is checked for finiteness instead."""
     mean = np.asarray(posterior.mean)
     cov = np.asarray(posterior.cov)
-    n_terms = len(TERM_NAMES)
-    rows = np.array([terms(c) for c in admissible_set])
+    term_names = [name for name in posterior.names if name not in LAG_NAMES]
+    term_index = [posterior.names.index(name) for name in term_names]
+    lag_index = [posterior.names.index(name) for name in LAG_NAMES]
+    rows = np.array([terms(c, moderators, term_names) for c in admissible_set])
     counts = np.array(admissible_set, dtype=float)
     with np.errstate(divide="ignore", over="ignore", invalid="ignore"):
         sample = rng.multivariate_normal(mean, cov, size=draws, method="cholesky")
-        value = sample[:, :n_terms] @ rows.T + lag_days * sample[:, n_terms:n_terms + 2] @ counts.T
+        value = sample[:, term_index] @ rows.T + lag_days * sample[:, lag_index] @ counts.T
     if not np.isfinite(value).all():
         raise ValueError("the posterior draws are not finite")
     return value
 
 
-def probabilities(policy, admissible_set, posterior, seed, parameters=None):
+def probabilities(policy, admissible_set, posterior, seed, parameters=None, moderators=None):
     """({composition key: probability}, rule): the probabilities of the day.
+
+    moderators: the participant's moderators of the day ({name: value}, logged in the state).
 
     rule is "uniform", "conservative", or "fallback" when the conservative rule has no posterior
     (the starting probabilities are used). The posterior draws come from a generator seeded by the
@@ -136,7 +164,7 @@ def probabilities(policy, admissible_set, posterior, seed, parameters=None):
         return start, "fallback"
     anchor = default if default in admissible_set else fallback(admissible_set)
     rng = np.random.default_rng([seed, 1])
-    value = values(posterior, admissible_set, parameters["lag_days"], rng, parameters["thompson_draws"])
+    value = values(posterior, admissible_set, parameters["lag_days"], rng, parameters["thompson_draws"], moderators)
     anchor_index = admissible_set.index(anchor)
     beats = (value > value[:, [anchor_index]]).mean(axis=0) > parameters["beat_threshold"]
     beats[anchor_index] = True

@@ -50,12 +50,68 @@ def test_fit_recovers_known_effects():
     names = posterior.names
     # One more reminder from (1,1) to (1,2): reminder_2 plus the interaction.
     contrast = composition.terms((1, 2)) - composition.terms((1, 1))
-    estimate = contrast @ mean[:7]
-    contrast_sd = np.sqrt(contrast @ np.array(posterior.cov)[:7, :7] @ contrast)
+    n = len(composition.TERM_NAMES)
+    estimate = contrast @ mean[:n]
+    contrast_sd = np.sqrt(contrast @ np.array(posterior.cov)[:n, :n] @ contrast)
     assert abs(estimate - (PER_REMINDER + FIRST_RECOMMENDATION * 0)) < 3 * contrast_sd
     lag = names.index("lag_reminders")
     assert abs(mean[lag] - LAG_REMINDER) < 3 * sd[lag]
     assert abs(mean[names.index("lag_recommendations")]) < 3 * sd[names.index("lag_recommendations")]
+
+
+def test_fit_recovers_a_moderator_of_the_reminders():
+    """The effect of each reminder is PER_REMINDER + 0.1 m_i, with m_i the participant's centred
+    marked share; the fit recovers the coefficient of days_marked_share_x_reminders."""
+    rng = np.random.default_rng(1)
+    probabilities = {composition.key(c): 1 / len(COMPOSITIONS) for c in COMPOSITIONS}
+    points = []
+    for user in range(600):
+        m = float(rng.uniform(-0.4, 0.4))
+        moderators = {"days_marked_share": m}
+        for _ in range(40):
+            chosen = COMPOSITIONS[int(rng.integers(len(COMPOSITIONS)))]
+            p = 0.4 + (PER_REMINDER + 0.1 * m) * chosen[1]
+            points.append(model.DecisionPoint(
+                f"u{user}", [1.0], composition.centred_terms(chosen, probabilities, moderators).tolist(),
+                [0.0, 0.0], int(rng.random() < np.clip(p, 0, 1))))
+    posterior = model.fit(points)
+    i = posterior.names.index("days_marked_share_x_reminders")
+    sd = np.sqrt(posterior.cov[i][i])
+    assert abs(posterior.mean[i] - 0.1) < 3 * sd
+
+
+def test_a_version_without_moderated_terms_is_fitted_and_used_with_its_own_terms():
+    names = composition.BASE_TERM_NAMES + composition.LAG_NAMES
+    probabilities = {composition.key(c): 1 / len(COMPOSITIONS) for c in COMPOSITIONS}
+    points = [model.DecisionPoint("u1", [1.0], composition.centred_terms(
+        c, probabilities, names=composition.BASE_TERM_NAMES).tolist(), [0.0, 0.0], i % 2)
+        for i, c in enumerate(COMPOSITIONS * 5)]
+    posterior = model.fit(points, names=names)
+    assert posterior.names == names and len(posterior.mean) == 9
+    # The moderators do not change the values of a version without moderated terms.
+    rng = lambda: np.random.default_rng(0)  # noqa: E731
+    plain = composition.values(posterior, COMPOSITIONS, 3, rng(), 50)
+    moderated = composition.values(posterior, COMPOSITIONS, 3, rng(), 50, {"days_marked_share": 0.4})
+    assert np.allclose(plain, moderated)
+
+
+def test_the_moderators_change_the_composition_of_a_participant():
+    """Coefficients common to all participants give different probabilities to two participants
+    whose moderators differ."""
+    posterior = model.prior()
+    mean = np.zeros(len(posterior.names))
+    mean[posterior.names.index("days_marked_share_x_reminders")] = 0.2
+    posterior = model.Posterior(names=posterior.names, mean=mean.tolist(),
+                                cov=(np.eye(len(mean)) * 1e-6).tolist())
+    parameters = {"explore_share": 0.0, "default_composition": [1, 1], "lag_days": 3, "thompson_draws": 200,
+                  "beat_threshold": 0.9}
+    high, _ = composition.probabilities("conservative", COMPOSITIONS, posterior, 7, parameters,
+                                        {"days_marked_share": 0.3})
+    low, _ = composition.probabilities("conservative", COMPOSITIONS, posterior, 7, parameters,
+                                       {"days_marked_share": -0.3})
+    # Each reminder is worth 0.2 m: the participant with m = 0.3 gets the most reminders, the one with
+    # m = -0.3 the fewest.
+    assert high["0,4"] == 1.0 and low["2,0"] == 1.0
 
 
 def test_terms_are_centred_under_the_probabilities_of_the_day():

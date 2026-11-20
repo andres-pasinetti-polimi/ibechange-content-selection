@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS marks (
     mission_id         TEXT,
     step               TEXT,        -- as sent; a UUID in the September 2026 INT messages
     total_steps        INTEGER,
-    reference_time     TIMESTAMP,   -- the day the mark refers to (finished_at)
+    reference_time     TIMESTAMP,   -- finished_at when it carries a time (UTC), before 17 November 2026
     entered_at         TIMESTAMP,   -- when the participant entered it (created_at)
     process_id         BIGINT,
     received_at        TIMESTAMP    -- when the service received the message
@@ -353,3 +353,7 @@ ALTER TABLE decisions ADD COLUMN IF NOT EXISTS composition_r INTEGER;
 ALTER TABLE decisions ADD COLUMN IF NOT EXISTS composition_q INTEGER;
 ALTER TABLE decisions ADD COLUMN IF NOT EXISTS composition_probabilities JSONB;
 ALTER TABLE decisions ADD COLUMN IF NOT EXISTS removed_compositions JSONB;
+
+-- From 17 November 2026 EUT sends finished_at of task_step_done as the day the mark refers to, with no
+-- time; it is the participant's local day and is kept as a date (parse_events.reference_of_mark).
+ALTER TABLE marks ADD COLUMN IF NOT EXISTS reference_day DATE;

@@ -104,7 +104,9 @@ def decide(participant, catalogue, posterior, model_version, group, day, now, se
                                                                design.DEFAULT_COMPOSITION)
             row["policy_rule"] = "fixed"
         else:
-            probabilities, row["policy_rule"] = composition.probabilities(design.POLICY, admissible, posterior, seed)
+            moderators = {name: row["state"][name] for name in composition.MODERATOR_NAMES}
+            probabilities, row["policy_rule"] = composition.probabilities(design.POLICY, admissible, posterior, seed,
+                                                                          moderators=moderators)
         row["fallback"] = row["policy_rule"] == "fallback"
     row["composition_probabilities"] = probabilities
     # The composition is the first draw of the day's generator.

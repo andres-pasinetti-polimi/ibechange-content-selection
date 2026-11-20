@@ -1,6 +1,6 @@
 # iBeChange content selection
 
-This repository holds the code of the content selection (CS) module developed by Politecnico di Milano (POLIMI) in Task 4.5 of the iBeChange project (Horizon Europe, grant agreement No 101136840). It is the code of deliverable D4.6, Reinforcement Learning Approach, and implements the techniques described in deliverable D4.5, Reinforcement Learning Model. The release that accompanies version 0.2 of D4.6 is the tag `d4.6-v0.2`. The earlier tag `d4.6-v1.0` (11 November 2026) is superseded: its off-policy scripts joined the selection log and the log of the model updates on participant, slot index and recommendation, without the plan, which paired some ratings with selections of other plans.
+This repository holds the code of the content selection (CS) module developed by Politecnico di Milano (POLIMI) in Task 4.5 of the iBeChange project (Horizon Europe, grant agreement No 101136840). It is the code of deliverable D4.6, Reinforcement Learning Approach, and implements the techniques described in deliverable D4.5, Reinforcement Learning Model. The release that accompanies version 0.3 of D4.6 is the tag `d4.6-v0.3`, which adds to the model of the RCT service two participant moderators of the number of recommendations and of reminders, the share of recommendations opened and the share of days marked, with coefficients common to all participants (D4.5, Section 8.2). The tag `d4.6-v0.2` (18 November 2026) accompanies version 0.2 of D4.6. The earlier tag `d4.6-v1.0` (11 November 2026) is superseded: its off-policy scripts joined the selection log and the log of the model updates on participant, slot index and recommendation, without the plan, which paired some ratings with selections of other plans.
 
 The code covers the two phases of the project in which the CS module learns from the data of the participants:
 
@@ -37,7 +37,7 @@ docker compose up -d postgres
 python -m pytest
 ```
 
-With the synthetic catalogue, 118 tests pass and 4 are skipped: the skipped tests check the catalogue scripts against the clinical workbooks, which are not distributed. With the clinical catalogue, all 122 tests pass.
+With the synthetic catalogue, 126 tests pass and 4 are skipped: the skipped tests check the catalogue scripts against the clinical workbooks, which are not distributed. With the clinical catalogue, all 130 tests pass.
 
 The commands to run the service, the message consumer and the simulation study are listed in D4.6, Table 9.
 

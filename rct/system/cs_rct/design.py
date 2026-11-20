@@ -7,8 +7,9 @@ the trial, and the value in force is written into every decision row (parameters
 later change is visible in the logs.
 
 STUDY selects the length of the programme and the state entries logged with each decision: the
-trial adds the Mission's class and frequency. The model has no per-participant random effect on the
-treatment terms in either study (design record, Section 1.2).
+trial adds the Mission's class and frequency. The model has two participant moderators of R and Q
+with coefficients common to all participants (decided 20 November 2026) and no per-participant random
+effect on the treatment terms in either study (design record, Section 1.2).
 """
 
 import os
@@ -56,6 +57,16 @@ THOMPSON_DRAWS = 500
 # The lag terms of the model: the sums of R and of Q over the LAG_DAYS preceding days, each day
 # centred on its expectation under the probabilities of that day.
 LAG_DAYS = 3
+
+# The participant moderators (composition.MODERATOR_NAMES, features.moderators): a share of the
+# participant's history, (count + MODERATOR_PSEUDO_COUNT * centre) / (total + MODERATOR_PSEUDO_COUNT),
+# less the centre. The pseudo-count keeps a participant with few days near the centre, so that a
+# participant without history gets the composition of the population. PROVISIONAL values: the
+# pseudo-count is one Mission window; the centre of the opened share is the pilot's share of sent
+# recommendations opened (openGivenSent 50.2%, debate_2026-10-26/SYNTHESIS.md, item 11); the centre
+# of the marked share is not taken from the pilot.
+MODERATOR_PSEUDO_COUNT = 7
+MODERATOR_CENTRE = {"recommendations_opened_share": 0.5, "days_marked_share": 0.5}
 
 WEEKLY_CAP = 28        # the daily maximum times seven; proposed to ICO, to be set by them
 
@@ -147,6 +158,8 @@ def parameters():
         "default_composition": list(DEFAULT_COMPOSITION),
         "thompson_draws": THOMPSON_DRAWS,
         "lag_days": LAG_DAYS,
+        "moderator_pseudo_count": MODERATOR_PSEUDO_COUNT,
+        "moderator_centre": MODERATOR_CENTRE,
         "weekly_cap": WEEKLY_CAP,
         "daily_outcome": DAILY_OUTCOME,
         "reminder_no_repeat_days": REMINDER_NO_REPEAT_DAYS,

@@ -51,7 +51,7 @@ def check_probabilities(decision_rows, versions):
             if rule == "conservative":
                 posterior = versions[row["model_version"]][0]
             replayed, _ = composition.probabilities(parameters["policy"], admissible, posterior, row["rng_seed"],
-                                                    parameters)
+                                                    parameters, moderators=update.moderators(row))
         checked += 1
         difference = max(abs(logged[key] - replayed.get(key, 0.0)) for key in logged)
         if set(replayed) != set(logged) or difference > TOLERANCE:
@@ -67,9 +67,10 @@ def check_versions(decision_rows, versions, participants, now):
             continue
         rows = [row for row in decision_rows if row["mission_process_id"] in set(episodes)]
         baseline = posterior.baseline or features.baseline_names(design.STUDY, with_marks=True)
+        term_names = [name for name in posterior.names if name not in composition.LAG_NAMES]
         points, included = update.training_points(rows, participants, now, design.STUDY, lag_rows=decision_rows,
-                                                  baseline=baseline)
-        refitted = model.fit(points, baseline)
+                                                  baseline=baseline, term_names=term_names)
+        refitted = model.fit(points, baseline, posterior.names)
         checked += 1
         difference = float(np.max(np.abs(np.array(refitted.mean) - np.array(posterior.mean))))
         if included != sorted(episodes) or difference > TOLERANCE:

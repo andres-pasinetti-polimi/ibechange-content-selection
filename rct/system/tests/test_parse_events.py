@@ -132,3 +132,17 @@ def test_a_timestamp_with_an_offset_becomes_utc():
     [row] = parse_events([body])["notification_events"]
     # Messages without an offset are in UTC (measured on INT), so one with an offset is stored in UTC too.
     assert row["created_at"] == datetime(2026, 10, 15, 7, 50, 21)
+
+
+def test_finished_at_as_a_date_is_the_day_of_the_mark():
+    body = json.dumps({"task_step_done": {
+        "user_uuid": "u1", "created_at": "2026-11-18T08:10:00.000000", "process_id": 1, "mission_process_id": 7,
+        "properties": {"mission_id": "PM66", "total_steps": 3, "finished_at": "2026-11-17"}}})
+    [mark] = parse_events([body])["marks"]
+    assert mark["reference_day"] == date(2026, 11, 17) and mark["reference_time"] is None
+    assert mark["entered_at"] == datetime(2026, 11, 18, 8, 10)
+
+
+def test_finished_at_with_a_time_is_read_as_before():
+    [mark] = parse_events(sample_bodies())["marks"]
+    assert mark["reference_day"] is None
